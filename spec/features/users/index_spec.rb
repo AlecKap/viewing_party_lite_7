@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'user(root) index', type: :feature do
+RSpec.describe 'landing page', type: :feature do
   describe 'As a user, when I visit the landing page' do
     before(:each) do
       @user1 = User.create!(name: 'Bob Saget', email: 'bob.saget@gmail.com')
@@ -18,7 +18,7 @@ RSpec.describe 'user(root) index', type: :feature do
 
       click_link 'Create New User'
 
-      expect(current_path).to eq(new_user_path)
+      expect(current_path).to eq(register_path)
     end
 
     it 'I see a list of existing users which each link to user dashboard' do

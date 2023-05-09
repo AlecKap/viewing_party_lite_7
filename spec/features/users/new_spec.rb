@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'new user page', type: :feature do
+RSpec.describe 'user registration page', type: :feature do
   describe 'As a user when I visit the /register path' do
     it 'I see a form to input new user information' do
       visit register_path
