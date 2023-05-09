@@ -20,7 +20,6 @@ RSpec.describe 'User Dsahboard Page' do
         click_button('Discover Movies')
 
         expect(current_path).to eq(user_discover_movies_path(@user1))
-        save_and_open_page
         expect(page).to have_content('Discover Movies')
       end
     end
