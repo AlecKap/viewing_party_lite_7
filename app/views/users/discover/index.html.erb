@@ -1,0 +1,8 @@
+<h2>Discover Movies Page</h2>
+
+<%= link_to 'Find Top Rated Movies', user_movies_path(@user, search: 'top%20rated'), class: 'btn btn-primary' %>
+
+<%= form_with url: user_movies_path(@user), method: :get, local: :true do |f| %>
+  <%= f.text_field :search %>
+  <%= f.submit 'Find Movies' %>
+<% end %>
