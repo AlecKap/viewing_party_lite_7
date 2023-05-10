@@ -7,7 +7,7 @@ RSpec.describe 'Discover Movies Page' do
       visit user_discover_index_path(@user1)
     end
 
-    it 'I see a Top Rated Movies button that redirects to the Movie Results page' do
+    it 'I see a Top Rated Movies button that redirects to the Movie Results page', :vcr do
       expect(page).to have_content('Discover Movies Page')
       expect(page).to have_link('Find Top Rated Movies')
 
