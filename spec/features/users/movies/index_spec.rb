@@ -31,8 +31,31 @@ RSpec.describe 'Movies Results Page', type: :feature do
     end
 
     describe 'and fill in the search box', :vcr do
-      before(:each) do
-        visit
+      it 'with a reasonable search, I see up to 20 results listed' do
+        fill_in 'search', with: 'lion'
+        click_button 'Find Movies'
+
+        expect(current_path).to eq(user_movies_path(@user1))
+        within(first('.movie')) do
+          expect(page).to have_content('lion')
+          expect(page).to have_css('.title')
+          expect(page).to have_css('.vote_average')
+        end
+
+        within(second('.movie')) do
+          expect(page).to have_content('lion')
+          expect(page).to have_css('.title')
+          expect(page).to have_css('.vote_average')
+        end
+      end
+
+      it 'with an unreasonable search, I see no results found' do
+        fill_in 'search', with: ';alksdbtaoivijalk;sdthjkhlkask'
+        click_button 'Find Movies'
+
+        expect(current_path).to eq(user_movies_path(@user1))
+        expect(page).to have_content('No Results Found')
+        expect(page).to_not have_css('.movie')
       end
     end
   end
