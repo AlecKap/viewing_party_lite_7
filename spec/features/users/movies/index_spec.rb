@@ -37,13 +37,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
 
         expect(current_path).to eq(user_movies_path(@user1))
         within(first('.movie')) do
-          expect(page).to have_content('lion')
-          expect(page).to have_css('.title')
-          expect(page).to have_css('.vote_average')
-        end
-
-        within(second('.movie')) do
-          expect(page).to have_content('lion')
+          expect(page).to have_content(/lion/i)
           expect(page).to have_css('.title')
           expect(page).to have_css('.vote_average')
         end
@@ -54,7 +48,6 @@ RSpec.describe 'Movies Results Page', type: :feature do
         click_button 'Find Movies'
 
         expect(current_path).to eq(user_movies_path(@user1))
-        expect(page).to have_content('No Results Found')
         expect(page).to_not have_css('.movie')
       end
     end

@@ -1,5 +1,5 @@
-class MoviesFacade
-  def top_rated
+class TopRatedFacade
+  def movies
     service = MovieService.new
     json = service.top_rated_movies
     @movies = json[:results].map do |movie_data|
