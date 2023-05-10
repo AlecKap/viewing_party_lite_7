@@ -16,10 +16,10 @@ RSpec.describe 'User Dsahboard Page' do
         redirected to the discover movies page' do
         expect(current_path).to eq(user_path(@user1))
         expect(page).to have_button('Discover Movies')
-        
+
         click_button('Discover Movies')
 
-        expect(current_path).to eq(user_discover_path(@user1))
+        expect(current_path).to eq(user_discover_index_path(@user1))
         expect(page).to have_content('Discover Movies')
       end
     end

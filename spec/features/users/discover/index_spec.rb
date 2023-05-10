@@ -11,7 +11,7 @@ RSpec.describe 'Discover Movies Page' do
       expect(page).to have_content('Discover Movies Page')
       expect(page).to have_link('Find Top Rated Movies')
 
-      click_link 'Discover Top Rated Movies'
+      click_link 'Find Top Rated Movies'
 
       expect(current_path).to eq(user_movies_path(@user1))
     end
