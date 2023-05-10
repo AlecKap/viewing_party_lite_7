@@ -1,0 +1,14 @@
+<%= link_to 'Discover Page', user_discover_index_path(@user) %>
+
+<% if @movies %>
+  <ul>
+    <% @movies.each do |movie| %>
+      <li class='movie'>
+        <p class='title'><%= movie.title %></p>
+        <p class='vote_average'><%= movie.vote_average %></p>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>No Results Found</h3>
+<% end %>
