@@ -28,6 +28,13 @@ RSpec.describe 'Movies Results Page', type: :feature do
           expect(page).to have_css('.vote_average')
         end
       end
+
+      it 'each movie has a link to its detail page' do
+        within(first('.movie')) do
+          # click_link ''
+          # expect(current_path).to eq(user_movie_path(@user1, movie))
+        end
+      end
     end
 
     describe 'and fill in the search box', :vcr do
