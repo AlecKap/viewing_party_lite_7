@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?query=%3Balksdbtaoivijalk%3Bsdthjkhlkask
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer tmdb_key
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 10 May 2023 23:47:48 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=22598
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - 2aeb1da6e98013325cb7cf701f4f5b5a
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '22598'
+      Etag:
+      - W/"0e23279b004381f72a34159d5c7dfd1f"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 a827400055d7bbab6e387896737d4e50.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - Bfa-6eoOoObbw-kaJXxxwi5kYmV-2o_c1ofAfFh9rRs2CflPG_2H5Q==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
+  recorded_at: Wed, 10 May 2023 23:47:48 GMT
+recorded_with: VCR 6.1.0
