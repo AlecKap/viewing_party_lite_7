@@ -1,18 +1,12 @@
 class Users::MoviesController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
     @facade = if params[:search] == 'top%20rated'
-                TopRatedFacade.new
+                TopRatedFacade.new(params)
               elsif params[:search] == ''
                 flash[:notice] = 'Search Field Cannot be Blank'
-                redirect_to user_discover_index_path(@user)
+                redirect_to user_discover_index_path(params[:user_id])
               elsif params[:search].present?
-                SearchFacade.new(params[:search])
+                SearchFacade.new(params)
               end
-  end
-
-  def show
-    @user = User.find(params[:user_id])
-
   end
 end
