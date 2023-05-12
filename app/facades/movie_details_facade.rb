@@ -17,9 +17,8 @@ class MovieDetailsFacade
   end
 
   def genres
-    genres = []
-    movie_details_data[:genres].each do |genre|
-      genres << genre[:name]
+    genres = movie_details_data[:genres].map do |genre|
+      genre[:name]
     end
     genres.to_sentence
   end
@@ -51,26 +50,14 @@ class MovieDetailsFacade
   end
 
   def movie_details_data
-    if @params[:movie_id].present?
-      @_movie_details_data ||= service.movie_details(@params[:movie_id])
-    else
-      @_movie_details_data ||= service.movie_details(@params[:id])
-    end
+    @_movie_details_data ||= service.movie_details(@params[:id])
   end
 
   def cast_data
-    if @params[:movie_id].present?
-      @_cast_data ||= service.movie_cast(@params[:movie_id])
-    else
-      @_cast_data ||= service.movie_cast(@params[:id])
-    end
+    @_cast_data ||= service.movie_cast(@params[:id])
   end
 
   def movie_reviews_data
-    if @params[:movie_id].present?
-      @_movie_reviews_data ||= service.movie_reviews_details(@params[:movie_id])
-    else
-      @_movie_reviews_data ||= service.movie_reviews_details(@params[:id])
-    end
+    @_movie_reviews_data ||= service.movie_reviews_details(@params[:id])
   end
 end
