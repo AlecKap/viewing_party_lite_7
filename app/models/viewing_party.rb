@@ -12,4 +12,11 @@ class ViewingParty < ApplicationRecord
   def duration_check
     duration >= movie_runtime
   end
+
+  def create_user_viewing_parties(params)
+    params[:invited_users].each do |user_id|
+      UserViewingParty.create(user_id: user_id.to_i, viewing_party_id: id)
+    end
+    UserViewingParty.create(user_id: params[:user_id], viewing_party_id: id)
+  end
 end

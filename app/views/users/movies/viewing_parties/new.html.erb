@@ -22,7 +22,7 @@
       <%= f.label :invite_other_users, 'Invite Other Users' %>
       <% @facade.other_users.each do |user| %>
         <div id="invite_user_<%= user.id %>">
-          <%= check_box_tag 'user_ids[ ]', user.id %>
+          <%= check_box_tag 'invited_users[]', user.id %>
           <%= label_tag :user_ids, "#{user.name}, #{user.email}" %>
         </div>
       <% end %>

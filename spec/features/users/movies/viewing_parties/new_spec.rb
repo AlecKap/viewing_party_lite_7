@@ -25,12 +25,12 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
         expect(page).to have_content('Invite Other Users')
 
         within("#invite_user_#{@user2.id}") do
-          expect(page).to have_unchecked_field('user_ids[ ]')
+          expect(page).to have_unchecked_field('invited_users[]')
           expect(page).to have_content('Emma Watson, hermione.foreva@gmail.com')
         end
 
         within("#invite_user_#{@user3.id}") do
-          expect(page).to have_unchecked_field('user_ids[ ]')
+          expect(page).to have_unchecked_field('invited_users[]')
           expect(page).to have_content('Sigmund Freud, its.all.about.mom@gmail.com')
         end
 
@@ -46,37 +46,37 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
       select '30', from: 'viewing_party[start_time(5i)]'
 
       within("#invite_user_#{@user2.id}") do
-        check 'user_ids[ ]'
+        check 'invited_users[]'
       end
 
       within("#invite_user_#{@user3.id}") do
-        check 'user_ids[ ]'
+        check 'invited_users[]'
       end
-
+      
       click_button 'Create Party'
 
       expect(current_path).to eq(user_path(@user1))
       # expect(page).to have_content('Scott Pilgrim vs. the World')
     end
 
-    it 'I cant fill it out with a duration less than the movie runtime' do
+    it 'I cant fill it out with a duration less than the movie runtime', :vcr do
       fill_in 'viewing_party[duration]', with: 50
       fill_in 'viewing_party[day]', with: '07/02/2023'
       select '20', from: 'viewing_party[start_time(4i)]'
       select '30', from: 'viewing_party[start_time(5i)]'
 
       within("#invite_user_#{@user2.id}") do
-        check 'user_ids[ ]'
+        check 'invited_users[]'
       end
 
       within("#invite_user_#{@user3.id}") do
-        check 'user_ids[ ]'
+        check 'invited_users[]'
       end
 
       click_button 'Create Party'
 
       expect(page).to have_content('All fields must be filled in and duration must be greater than movie runtime')
-      expect(page).to have_Content('Create a Movie Party for Scott Pilgrim vs. the World')
+      expect(page).to have_content('Create a Movie Party for Scott Pilgrim vs. the World')
     end
   end
 end

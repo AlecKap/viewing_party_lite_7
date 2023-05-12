@@ -48,15 +48,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 a0b647da77edd97cca88fb4c4b1a9d08.cloudfront.net (CloudFront)
+      - 1.1 045f1e1f031241f3808c557a2b5d6b0a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P3
+      - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - l8joVO4X9sgDogqvtf8CGhNIplZRKJ_c9KdLfGJONdr3F5M9BDjEbA==
+      - tAVnu78U3q08CvjvwmuxDSWwTIJuV2-_oBa6MRKtpsf-m4SRaXSXtQ==
       Age:
-      - '5610'
+      - '19946'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/7zwngyl6Cg4NeD4AIOfpXgrcDv6.jpg","genre_ids":[28,35,10749],"id":22538,"original_language":"en","original_title":"Scott
@@ -72,7 +72,7 @@ http_interactions:
         Making of ''Scott Pilgrim vs. the World''","overview":"A hyperkinetic behind
         the scenes look at the film.","popularity":1.456,"poster_path":"/eWBFQPSrTlA4Xrv1iF4TdTQniOf.jpg","release_date":"2010-11-09","title":"The
         Making of ''Scott Pilgrim vs. the World''","video":true,"vote_average":7.8,"vote_count":3}],"total_pages":1,"total_results":3}'
-  recorded_at: Fri, 12 May 2023 19:19:43 GMT
+  recorded_at: Fri, 12 May 2023 23:18:39 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/22538
@@ -121,15 +121,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 56a79b3a2ac1e2942686c2337f96fb72.cloudfront.net (CloudFront)
+      - 1.1 23241b9c368643949e3bb1a1ba4e97c2.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P3
+      - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - zAhNwXapkLFexsWCzB7qZ0BCXrlN7iLS_XkDaktl7Tz806vj_pnJuA==
+      - b3VFQiLtLynYRAnOnshljix-6xk_l44xOPX_rWdTSPYScpPNEe3QEQ==
       Age:
-      - '5610'
+      - '19946'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/7zwngyl6Cg4NeD4AIOfpXgrcDv6.jpg","belongs_to_collection":null,"budget":85000000,"genres":[{"id":28,"name":"Action"},{"id":35,"name":"Comedy"},{"id":10749,"name":"Romance"}],"homepage":"http://www.scottpilgrimthemovie.com/","id":22538,"imdb_id":"tt0446029","original_language":"en","original_title":"Scott
@@ -146,7 +146,7 @@ http_interactions:
         States of America"},{"iso_3166_1":"JP","name":"Japan"}],"release_date":"2010-08-12","revenue":48000000,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Get
         the hot girl. Defeat her evil exes. Hit love where it hurts.","title":"Scott
         Pilgrim vs. the World","video":false,"vote_average":7.462,"vote_count":6944}'
-  recorded_at: Fri, 12 May 2023 19:19:43 GMT
+  recorded_at: Fri, 12 May 2023 23:18:39 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/22538/credits
@@ -195,15 +195,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 c1e0a7ac577ef4659f75bd73a73531f6.cloudfront.net (CloudFront)
+      - 1.1 ce4b35590464ed34415a13badd946eba.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P3
+      - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - WkxQLt8tK9dB6BUIRbD78DduNubFd5Mr4uzyJlqcR4fy_eWMeWjUIA==
+      - c7G0d4cD605tF01dyzKJvUrqNcMrC4QSmT5roIkEWtob8aFA83s9Ew==
       Age:
-      - '5609'
+      - '19945'
     body:
       encoding: ASCII-8BIT
       string: '{"id":22538,"cast":[{"adult":false,"gender":2,"id":39995,"known_for_department":"Acting","name":"Michael
@@ -435,7 +435,7 @@ http_interactions:
         Aro","original_name":"Jeffery Aro","popularity":0.84,"profile_path":null,"credit_id":"5f7cd658b7abb50038653157","department":"Crew","job":"Stunts"},{"adult":false,"gender":0,"id":3094185,"known_for_department":"Art","name":"Chris
         Deeley","original_name":"Chris Deeley","popularity":0.6,"profile_path":null,"credit_id":"61821c9eddd52d00615e3858","department":"Art","job":"Set
         Dresser"}]}'
-  recorded_at: Fri, 12 May 2023 19:19:43 GMT
+  recorded_at: Fri, 12 May 2023 23:18:39 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/22538/reviews
@@ -484,20 +484,20 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 0493ac96db17aa3c2303a0a81e1a1ec8.cloudfront.net (CloudFront)
+      - 1.1 e4ca364cc5959e3bf697ae231c5b56b0.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P3
+      - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - evo-i14J4oG-BNn_eOmnnoTVrhJE58olNzwzbzg2rK8enLhVD96pMw==
+      - tItbS7HVKNaVOQNxbzD7uRlIl75RSLUDeMXHmYuf-Y3tzPj9h601vw==
       Age:
-      - '5609'
+      - '19945'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJpZCI6MjI1MzgsInBhZ2UiOjEsInJlc3VsdHMiOlt7ImF1dGhvciI6IlRoZSBNb3ZpZSBNb2IiLCJhdXRob3JfZGV0YWlscyI6eyJuYW1lIjoiVGhlIE1vdmllIE1vYiIsInVzZXJuYW1lIjoibW9vbmV5MjQwIiwiYXZhdGFyX3BhdGgiOiIvYmxFQzI4MHZxMzFNVmFEY3NXQlh1R09zWW5CLmpwZyIsInJhdGluZyI6Ny4wfSwiY29udGVudCI6IioqSW5ub3ZhdGl2ZS4gVW5pcXVlLiBRdWlya3kuIFJpZGljdWxvdXMuIEZ1bi4gRWRnYXIgV3JpZ2h0IGNyZWF0ZXMgYSBjcmF6eSwgZnVuIGZpbG0gd2l0aCBhbWF6aW5nIHN0eWxlIGFuZCBlZmZlY3RzIHRoYXQgd2lsbCBtYWtlIHlvdSBsYXVnaCBmcm9tIHN0YXJ0IHRvIGZpbmlzaC4qKlxyXG5cclxuU2NvdHQgUGlsZ3JpbSB2cy4gdGhlIFdvcmxkIGlzIHVubGlrZSBhbnl0aGluZyB5b3UgaGF2ZSBldmVyIHNlZW4uIFVuaXF1ZSBpbiBhbG1vc3QgZXZlcnkgd2F5LCB3aXRoIGl0cyBjb25zdGFudCBzdHJlYW0gb2YgZWZmZWN0cyBiZWluZyB1c2VkIHRvIGJyaWxsaWFudGx5IHN0eWxpemUgYW5kIHRyYW5zZm9ybSB0aGlzIGZpbG0gaW50byBhIG9uZS1vZi1hLWtpbmQgdmlkZW8gZ2FtZS9jb21pYyBib29rIG1hcnZlbCEgRXZlcnkgcHVuY2ggZWZmZWN0LCBleHBsb3Npb24gb2YgY29pbnMsIHBvd2VyLXVwLCBhbmQgaGVhbHRoIGJhciBpbW1lcnNlIHRoZSBhdWRpZW5jZSBmdXJ0aGVyIGludG8gdGhpcyBsaXZlLWFjdGlvbiB2aWRlbyBnYW1lIHdvcmxkLiBUaGUgbW92aWUgaXMgZnVsbCBvZiBxdWlya3MgYW5kIHByZXR0eSBkb3JreSwgYnV0IGl0IGFsbCBmaXRzIHdpdGggTWljaGFlbCBDZXJh4oCZcyBnb29meSBidXQgZW5kZWFyaW5nIGNoYXJhY3Rlci4gRWRnYXIgV3JpZ2h04oCZcyBzdHlsZSBkcmlwcyBmcm9tIGV2ZXJ5IG1vbWVudCBvZiB0aGUgZmlsbSwgZXZlbiB3aXRoIGl0cyBtdWNoIGZhc3RlciBwYWNlIGFuZCBtb3JlIG51bWVyb3VzIGVmZmVjdHMgY29tcGFyZWQgdG8gaGlzIG90aGVyIG1vdmllcyBsaWtlIFNoYXVuIG9mIHRoZSBEZWFkIG9yIEhvdCBGdXp6LiBBbGwgdGhlIGdhbWluZyByZWZlcmVuY2VzIGFuZCBFYXN0ZXIgZWdncyB3ZXJlIGhpbGFyaW91cy4gU2NvdHQgUGlsZ3JpbSBhbHNvIGJvYXN0cyBhbiBhYnN1cmQgYW1vdW50IG9mIHRhbGVudCBpbiBpdHMgY2FzdCwgd2l0aCBwbGVudHkgb2YgQS1saXN0IHN0YXJzIGJlZm9yZSB0aGV5IHdlcmUgQS1saXN0ZXJzLCBpbmNsdWRpbmcgQ2FwdGFpbiBBbWVyaWNhLCBTdXBlcm1hbiwgUHVuaXNoZXIsIGFuZCBtb3JlISBTY290dCBQaWxncmltIGlzIGFuIGlubm92YXRpdmUgYW5kIGZ1biBmaWxtIHdpdGggcGxlbnR5IG9mIHBlcnNvbmFsaXR5IChhbmQgYSBsaXR0bGUgb2ZmLWNvbG9yIGh1bW9yKSB0aGF0IG1ha2UgaXQgYSBtdXN0LXNlZSBmb3IgQ29uYWtyeSBsb3ZlcnMsIGdhbWVycywgYW5kIEVkZ2FyIFdyaWdodCBmYW5zLiIsImNyZWF0ZWRfYXQiOiIyMDIzLTAyLTExVDA1OjU1OjE4LjY4NVoiLCJpZCI6IjYzZTcyZGM2OTUxMmUxMDA4NDYxNWRiZCIsInVwZGF0ZWRfYXQiOiIyMDIzLTAyLTExVDA1OjU1OjE4Ljc2MloiLCJ1cmwiOiJodHRwczovL3d3dy50aGVtb3ZpZWRiLm9yZy9yZXZpZXcvNjNlNzJkYzY5NTEyZTEwMDg0NjE1ZGJkIn1dLCJ0b3RhbF9wYWdlcyI6MSwidG90YWxfcmVzdWx0cyI6MX0=
-  recorded_at: Fri, 12 May 2023 19:19:43 GMT
+  recorded_at: Fri, 12 May 2023 23:18:39 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/22538
@@ -546,15 +546,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 21d788b44c2b3d335a275c07a54548b6.cloudfront.net (CloudFront)
+      - 1.1 ec4d04f2befcd6652834fd368a8b671e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P3
+      - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 86j7C16vSKdD386YPI0DN5PmSD8mzgUmUGhjCn3teQyTvXNP1ITkpA==
+      - Mb8xjmF5V9CiSCjE2P1AskdF0O14z4e85hOi5__jRLyO79sayPE1pA==
       Age:
-      - '5611'
+      - '19946'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/7zwngyl6Cg4NeD4AIOfpXgrcDv6.jpg","belongs_to_collection":null,"budget":85000000,"genres":[{"id":28,"name":"Action"},{"id":35,"name":"Comedy"},{"id":10749,"name":"Romance"}],"homepage":"http://www.scottpilgrimthemovie.com/","id":22538,"imdb_id":"tt0446029","original_language":"en","original_title":"Scott
@@ -571,5 +571,79 @@ http_interactions:
         States of America"},{"iso_3166_1":"JP","name":"Japan"}],"release_date":"2010-08-12","revenue":48000000,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Get
         the hot girl. Defeat her evil exes. Hit love where it hurts.","title":"Scott
         Pilgrim vs. the World","video":false,"vote_average":7.462,"vote_count":6944}'
-  recorded_at: Fri, 12 May 2023 19:19:43 GMT
+  recorded_at: Fri, 12 May 2023 23:18:39 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/22538
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer tmdb_key
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 12 May 2023 17:46:13 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28076
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - ac654f588af912435df91d063df0d83e
+      X-Memc-Age:
+      - '578'
+      X-Memc-Expires:
+      - '28199'
+      Etag:
+      - W/"39a1e6c22385e78a3d4cc33c149f3a26"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 2ad801a60bd36fbeb6a62fab7eabe330.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 1C101MDdp7WZxsKboY2HGA0VUwsMulYQkLeTdFZ-2Rr0JmRTFZ03HQ==
+      Age:
+      - '19946'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/7zwngyl6Cg4NeD4AIOfpXgrcDv6.jpg","belongs_to_collection":null,"budget":85000000,"genres":[{"id":28,"name":"Action"},{"id":35,"name":"Comedy"},{"id":10749,"name":"Romance"}],"homepage":"http://www.scottpilgrimthemovie.com/","id":22538,"imdb_id":"tt0446029","original_language":"en","original_title":"Scott
+        Pilgrim vs. the World","overview":"As bass guitarist for a garage-rock band,
+        Scott Pilgrim has never had trouble getting a girlfriend; usually, the problem
+        is getting rid of them. But when Ramona Flowers skates into his heart, he
+        finds she has the most troublesome baggage of all: an army of ex-boyfriends
+        who will stop at nothing to eliminate him from her list of suitors.","popularity":27.479,"poster_path":"/g5IoYeudx9XBEfwNL0fHvSckLBz.jpg","production_companies":[{"id":33,"logo_path":"/8lvHyhjr8oUKOOy2dKXoALWKdp0.png","name":"Universal
+        Pictures","origin_country":"US"},{"id":2527,"logo_path":"/osO7TGmlRMistSQ5JZusPhbKUHk.png","name":"Marc
+        Platt Productions","origin_country":"US"},{"id":443,"logo_path":"/deewJi8ncCh6Sc2STL91wvZ4O5X.png","name":"Big
+        Talk Productions","origin_country":"GB"},{"id":87733,"logo_path":null,"name":"Closed
+        on Mondays Entertainment","origin_country":"US"},{"id":1778,"logo_path":"/b5rT6VbYza3LyfltCmz1OcqzWJM.png","name":"dentsu","origin_country":"JP"}],"production_countries":[{"iso_3166_1":"GB","name":"United
+        Kingdom"},{"iso_3166_1":"CA","name":"Canada"},{"iso_3166_1":"US","name":"United
+        States of America"},{"iso_3166_1":"JP","name":"Japan"}],"release_date":"2010-08-12","revenue":48000000,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Get
+        the hot girl. Defeat her evil exes. Hit love where it hurts.","title":"Scott
+        Pilgrim vs. the World","video":false,"vote_average":7.462,"vote_count":6944}'
+  recorded_at: Fri, 12 May 2023 23:18:39 GMT
 recorded_with: VCR 6.1.0
