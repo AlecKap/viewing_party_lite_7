@@ -29,7 +29,7 @@ class MovieDetailsFacade
     cast_data[:cast][0..9].each do |cast_mem|
       cast_mem_and_char << "#{cast_mem[:name]} as #{cast_mem[:character]}"
     end
-    cast_mem_and_char.to_sentence
+    cast_mem_and_char
   end
 
   def reviews
