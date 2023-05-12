@@ -17,9 +17,8 @@ class MovieDetailsFacade
   end
 
   def genres
-    genres = []
-    movie_details_data[:genres].each do |genre|
-      genres << genre[:name]
+    genres = movie_details_data[:genres].map do |genre|
+      genre[:name]
     end
     genres.to_sentence
   end

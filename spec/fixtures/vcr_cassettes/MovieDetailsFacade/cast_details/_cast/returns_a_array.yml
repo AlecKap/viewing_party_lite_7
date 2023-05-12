@@ -27,36 +27,34 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 12 May 2023 14:20:19 GMT
+      - Fri, 12 May 2023 23:18:32 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=27826
+      - public, max-age=27391
       X-Memc:
       - HIT
       X-Memc-Key:
       - b5d517732f14375499b0689f0803e072
       X-Memc-Age:
-      - '15110'
+      - '19072'
       X-Memc-Expires:
-      - '12428'
+      - '6990'
       Etag:
-      - W/"bdd3b76dd173b68b72e18f800dfe564b"
+      - W/"f2847d1005bb163fc39e83fcaef6535c"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 2c861897aa9389c1f47299b6fea5b59c.cloudfront.net (CloudFront)
+      - 1.1 8bd27032f0d38908fbe32b696e45c288.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - I1w5ZH6WV20cV6JEXig0T5whvUD3k_d2PQiwcJ4Imtw3JeKWyGPs4g==
-      Age:
-      - '4614'
+      - rbbqQ_nXP1wpRcNwGdwV5DM-05Hj-FYBioC7EcNt-XDATrWADg1Hdg==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/aJCtkxLLzkk1pECehVjKHA2lBgw.jpg","belongs_to_collection":{"id":10,"name":"Star
@@ -70,8 +68,8 @@ http_interactions:
         and despair.","popularity":31.466,"poster_path":"/2l05cFWJacyIsTpsqSgH0wQXe4V.jpg","production_companies":[{"id":1,"logo_path":"/o86DbpburjxrqAzEDhXZcyE8pDb.png","name":"Lucasfilm
         Ltd.","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1980-05-20","revenue":538400000,"runtime":124,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
-        Adventure Continues...","title":"The Empire Strikes Back","video":false,"vote_average":8.4,"vote_count":15316}'
-  recorded_at: Fri, 12 May 2023 15:37:13 GMT
+        Adventure Continues...","title":"The Empire Strikes Back","video":false,"vote_average":8.392,"vote_count":15317}'
+  recorded_at: Fri, 12 May 2023 23:18:32 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/1891/credits
@@ -98,37 +96,35 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Fri, 12 May 2023 14:20:20 GMT
       Server:
       - openresty
-      Cache-Control:
-      - public, max-age=26610
       X-Memc:
       - HIT
       X-Memc-Key:
       - e1ccf43be5e9ccdffe2f9be475252718
       X-Memc-Age:
-      - '25435'
+      - '1033'
       X-Memc-Expires:
-      - '2908'
+      - '23365'
+      Date:
+      - Fri, 12 May 2023 23:18:32 GMT
+      Cache-Control:
+      - public, max-age=24591
       Etag:
       - W/"313c88b6765f8fad4ca6576f4e5cacf9"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Hit from cloudfront
+      - RefreshHit from cloudfront
       Via:
-      - 1.1 38059ba65876500c040fb73e2cbaebf4.cloudfront.net (CloudFront)
+      - 1.1 9cefde3a3c84cc779d3c26a39c2e4430.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - eYEvH9HheCKakiHYhre5jzCXGiTlQBVkb6eeHUmlWPLLN6TKujfU7A==
-      Age:
-      - '4613'
+      - QV--tGeuf-ym3ux3bgy_XbyLJrGwZyEtj5sCGN_QH2n7iBDNwr9y8w==
     body:
       encoding: ASCII-8BIT
       string: '{"id":1891,"cast":[{"adult":false,"gender":2,"id":2,"known_for_department":"Acting","name":"Mark
@@ -393,5 +389,5 @@ http_interactions:
         Bream","original_name":"Reg Bream","popularity":0.6,"profile_path":null,"credit_id":"5c3f42219251417a60ad5764","department":"Art","job":"Draughtsman"},{"adult":false,"gender":0,"id":2922346,"known_for_department":"Sound","name":"London
         Symphony Orchestra","original_name":"London Symphony Orchestra","popularity":0.6,"profile_path":null,"credit_id":"5ff37a8067203d003dcbd373","department":"Sound","job":"Musician"},{"adult":false,"gender":0,"id":3997531,"known_for_department":"Sound","name":"Peter
         Sutton","original_name":"Peter Sutton","popularity":0.6,"profile_path":null,"credit_id":"642f09e14544af00e09c264c","department":"Sound","job":"Sound"}]}'
-  recorded_at: Fri, 12 May 2023 15:37:13 GMT
+  recorded_at: Fri, 12 May 2023 23:18:32 GMT
 recorded_with: VCR 6.1.0

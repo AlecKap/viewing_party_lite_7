@@ -27,36 +27,34 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 12 May 2023 14:20:19 GMT
+      - Fri, 12 May 2023 23:18:32 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=27826
+      - public, max-age=27391
       X-Memc:
       - HIT
       X-Memc-Key:
       - b5d517732f14375499b0689f0803e072
       X-Memc-Age:
-      - '15110'
+      - '19072'
       X-Memc-Expires:
-      - '12428'
+      - '6990'
       Etag:
-      - W/"bdd3b76dd173b68b72e18f800dfe564b"
+      - W/"f2847d1005bb163fc39e83fcaef6535c"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 cddde15c11afac53ac9fe7978dcfecd6.cloudfront.net (CloudFront)
+      - 1.1 8bd27032f0d38908fbe32b696e45c288.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - dfO6bMoPGqRYCRZXEVcvYg1ypsWXvYZtM_T5rhzGET_DH_AbHT-JiQ==
-      Age:
-      - '4560'
+      - rFy_SJfpNZ2Zwj3pcmuuAUbEpIlWUAKFWBHNUissVLDOKVdJBV1SCQ==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/aJCtkxLLzkk1pECehVjKHA2lBgw.jpg","belongs_to_collection":{"id":10,"name":"Star
@@ -70,6 +68,6 @@ http_interactions:
         and despair.","popularity":31.466,"poster_path":"/2l05cFWJacyIsTpsqSgH0wQXe4V.jpg","production_companies":[{"id":1,"logo_path":"/o86DbpburjxrqAzEDhXZcyE8pDb.png","name":"Lucasfilm
         Ltd.","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1980-05-20","revenue":538400000,"runtime":124,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
-        Adventure Continues...","title":"The Empire Strikes Back","video":false,"vote_average":8.4,"vote_count":15316}'
-  recorded_at: Fri, 12 May 2023 15:36:19 GMT
+        Adventure Continues...","title":"The Empire Strikes Back","video":false,"vote_average":8.392,"vote_count":15317}'
+  recorded_at: Fri, 12 May 2023 23:18:32 GMT
 recorded_with: VCR 6.1.0
