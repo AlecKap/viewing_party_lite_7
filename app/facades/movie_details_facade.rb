@@ -51,14 +51,26 @@ class MovieDetailsFacade
   end
 
   def movie_details_data
-    @_movie_details_data ||= service.movie_details(@params[:id])
+    if @params[:movie_id].present?
+      @_movie_details_data ||= service.movie_details(@params[:movie_id])
+    else
+      @_movie_details_data ||= service.movie_details(@params[:id])
+    end
   end
 
   def cast_data
-    @_cast_data ||= service.movie_cast(@params[:id])
+    if @params[:movie_id].present?
+      @_cast_data ||= service.movie_cast(@params[:movie_id])
+    else
+      @_cast_data ||= service.movie_cast(@params[:id])
+    end
   end
 
   def movie_reviews_data
-    @_movie_reviews_data ||= service.movie_reviews_details(@params[:id])
+    if @params[:movie_id].present?
+      @_movie_reviews_data ||= service.movie_reviews_details(@params[:movie_id])
+    else
+      @_movie_reviews_data ||= service.movie_reviews_details(@params[:id])
+    end
   end
 end

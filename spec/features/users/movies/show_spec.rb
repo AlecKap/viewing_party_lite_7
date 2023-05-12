@@ -13,17 +13,20 @@ RSpec.describe 'Movie Details Page', type: :feature do
     describe 'movie details page', :vcr do
       it 'has a Discover Page button' do
         expect(page).to have_button('Discover Page')
-  
+
         click_button 'Discover Page'
-  
+
         expect(current_path).to eq(user_discover_index_path(@user1))
       end
-  
+
       it 'has a Create Viewing Party button' do
         expect(page).to have_button('Create Viewing Party for Harry Potter and the Goblet of Fire')
-  
+
+        click_button 'Create Viewing Party for Harry Potter and the Goblet of Fire'
+
+        expect(page).to have_content('Create a Movie Party for Harry Potter and the Goblet of Fire')
       end
-  
+
       it 'has movie details' do
         expect(page).to have_css('.title')
         expect(page).to have_css('.vote_average')
