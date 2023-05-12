@@ -1,13 +1,25 @@
 class SearchFacade
-  def initialize(query)
-    @query = query
+  def initialize(params)
+    @params = params
   end
 
   def movies
-    service = MovieService.new
-    json = service.search_movies(@query)
-    @movies = json[:results].map do |movie_data|
+    @movies = search_movies_data[:results].map do |movie_data|
       Movie.new(movie_data)
     end
+  end
+
+  def user_id
+    @params[:user_id]
+  end
+
+  private
+
+  def service
+    @_service ||= MovieService.new
+  end
+
+  def search_movies_data
+    @_search_movies_data ||= service.search_movies(@params[:search])
   end
 end
