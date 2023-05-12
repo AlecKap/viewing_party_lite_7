@@ -12,7 +12,6 @@ RSpec.describe 'Movie Details Page', type: :feature do
 
     describe 'movie details page', :vcr do
       it 'has a Discover Page button' do
-        save_and_open_page
         expect(page).to have_button('Discover Page')
   
         click_button 'Discover Page'
