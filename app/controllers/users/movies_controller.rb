@@ -9,4 +9,8 @@ class Users::MoviesController < ApplicationController
                 SearchFacade.new(params)
               end
   end
+
+  def show
+    @facade = MovieDetailsFacade.new(params)
+  end
 end

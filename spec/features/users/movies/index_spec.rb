@@ -30,10 +30,11 @@ RSpec.describe 'Movies Results Page', type: :feature do
       end
 
       it 'each movie has a link to its detail page' do
-        within(first('.movie')) do
-          # click_link ''
-          # expect(current_path).to eq(user_movie_path(@user1, movie))
-        end
+        link = all('.title')[0]
+
+        link.click
+
+        expect(page).to have_content('Movie Details Page')
       end
     end
 

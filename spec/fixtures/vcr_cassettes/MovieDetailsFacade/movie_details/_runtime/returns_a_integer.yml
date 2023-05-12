@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/1891
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer tmdb_key
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 11 May 2023 23:27:51 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27660
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - b5d517732f14375499b0689f0803e072
+      X-Memc-Age:
+      - '15988'
+      X-Memc-Expires:
+      - '12323'
+      Etag:
+      - W/"209f98e02bf8248856770d7b25d6ed04"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 9c7e5857d78c5dc89042979317de5842.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - fAoaOuuYL4ytaUjUjuqnxSASy9czYg3Z3tHzqCUmvKTvhWZ5BXZyng==
+      Age:
+      - '1'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/aJCtkxLLzkk1pECehVjKHA2lBgw.jpg","belongs_to_collection":{"id":10,"name":"Star
+        Wars Collection","poster_path":"/gq5Wi7i4SF3lo4HHkJasDV95xI9.jpg","backdrop_path":"/d8duYyyC9J5T825Hg7grmaabfxQ.jpg"},"budget":18000000,"genres":[{"id":12,"name":"Adventure"},{"id":28,"name":"Action"},{"id":878,"name":"Science
+        Fiction"}],"homepage":"http://www.starwars.com/films/star-wars-episode-v-the-empire-strikes-back","id":1891,"imdb_id":"tt0080684","original_language":"en","original_title":"The
+        Empire Strikes Back","overview":"The epic saga continues as Luke Skywalker,
+        in hopes of defeating the evil Galactic Empire, learns the ways of the Jedi
+        from aging master Yoda. But Darth Vader is more determined than ever to capture
+        Luke. Meanwhile, rebel leader Princess Leia, cocky Han Solo, Chewbacca, and
+        droids C-3PO and R2-D2 are thrown into various stages of capture, betrayal
+        and despair.","popularity":27.675,"poster_path":"/2l05cFWJacyIsTpsqSgH0wQXe4V.jpg","production_companies":[{"id":1,"logo_path":"/o86DbpburjxrqAzEDhXZcyE8pDb.png","name":"Lucasfilm
+        Ltd.","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1980-05-20","revenue":538400000,"runtime":124,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        Adventure Continues...","title":"The Empire Strikes Back","video":false,"vote_average":8.4,"vote_count":15315}'
+  recorded_at: Thu, 11 May 2023 23:27:52 GMT
+recorded_with: VCR 6.1.0
