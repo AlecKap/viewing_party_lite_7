@@ -1,14 +1,14 @@
 class Users::Movies::ViewingPartiesController < ApplicationController
   def new
-    @users = User.all
     @viewing_party = ViewingParty.new
-    @facade = MovieDetailsFacade.new(params)
+    @facade = ViewingPartyFacade.new(params)
   end
 
   def create
     viewing_party = ViewingParty.new(viewing_party_params)
     if viewing_party.save
-      redirect_to user_path(viewing_party_params[:user_id])
+      flash[:notice] = 'Viewing Party Succesfully Created'
+      redirect_to user_path(viewing_party_params[:host])
     else
       flash[:notice] = 'Incorrect Info'
     end

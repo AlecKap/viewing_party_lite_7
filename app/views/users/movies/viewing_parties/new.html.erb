@@ -1,7 +1,7 @@
 <h3>Create a Movie Party for <%= @facade.movie.title %></h3>
 
 <div class='create_viewing_party'>
-  <%= form_with model: @viewing_party, url: new_user_movie_viewing_party_path(@facade.user_id, @facade.movie.id), method: :post, local: true do |f| %>
+  <%= form_with model: @viewing_party, url: user_movie_viewing_party_index_path(@facade.user_id, @facade.movie.id), method: :post, local: true do |f| %>
     <div class='movie_title'>
       <%= f.label :movie_title, "Movie Title: #{@facade.movie.title}" %>
       <%= f.hidden_field :movie_title, value: @facade.movie.title %>
@@ -20,14 +20,15 @@
     </div>
     <div class='invite_other_users'>
       <%= f.label :invite_other_users, 'Invite Other Users' %>
-      <% @users.each do |user| %>
-        <div>
-          <%= check_box_tag :user %>
-          <%= label_tag :user, "#{user.name}, #{user.email}" %>
+      <% @facade.other_users.each do |user| %>
+        <div id="invite_user_<%= user.id %>">
+          <%= check_box_tag 'user_ids[ ]', user.id %>
+          <%= label_tag :user_ids, "#{user.name}, #{user.email}" %>
         </div>
       <% end %>
     </div>
     <%= f.hidden_field :host, value: @facade.user_id %>
+    <%= f.hidden_field :movie_id, value: @facade.movie.id %>
     <%= f.submit 'Create Party' %>
   <% end %>
 </div>
