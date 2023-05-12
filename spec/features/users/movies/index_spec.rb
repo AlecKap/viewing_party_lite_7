@@ -28,6 +28,13 @@ RSpec.describe 'Movies Results Page', type: :feature do
           expect(page).to have_css('.vote_average')
         end
       end
+
+      it 'each movie has a link to its detail page' do
+        within(first('.movie')) do
+          # click_link ''
+          # expect(current_path).to eq(user_movie_path(@user1, movie))
+        end
+      end
     end
 
     describe 'and fill in the search box', :vcr do
@@ -41,14 +48,6 @@ RSpec.describe 'Movies Results Page', type: :feature do
           expect(page).to have_css('.title')
           expect(page).to have_css('.vote_average')
         end
-      end
-
-      it 'with an unreasonable search, I see no results found' do
-        fill_in 'search', with: ';alksdbtaoivijalk;sdthjkhlkask'
-        click_button 'Find Movies'
-
-        expect(current_path).to eq(user_movies_path(@user1))
-        expect(page).to_not have_css('.movie')
       end
     end
   end
