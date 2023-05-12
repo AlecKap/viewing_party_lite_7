@@ -58,5 +58,25 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
       expect(current_path).to eq(user_path(@user1))
       # expect(page).to have_content('Scott Pilgrim vs. the World')
     end
+
+    it 'I cant fill it out with a duration less than the movie runtime' do
+      fill_in 'viewing_party[duration]', with: 50
+      fill_in 'viewing_party[day]', with: '07/02/2023'
+      select '20', from: 'viewing_party[start_time(4i)]'
+      select '30', from: 'viewing_party[start_time(5i)]'
+
+      within("#invite_user_#{@user2.id}") do
+        check 'user_ids[ ]'
+      end
+
+      within("#invite_user_#{@user3.id}") do
+        check 'user_ids[ ]'
+      end
+
+      click_button 'Create Party'
+
+      expect(page).to have_content('All fields must be filled in and duration must be greater than movie runtime')
+      expect(page).to have_Content('Create a Movie Party for Scott Pilgrim vs. the World')
+    end
   end
 end

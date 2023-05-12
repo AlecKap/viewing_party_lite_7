@@ -1,16 +1,17 @@
 class Users::Movies::ViewingPartiesController < ApplicationController
   def new
-    @viewing_party = ViewingParty.new
     @facade = ViewingPartyFacade.new(params)
   end
 
   def create
     viewing_party = ViewingParty.new(viewing_party_params)
-    if viewing_party.save
+    if viewing_party.duration_check && viewing_party.save
+      viewing_party.create_user_viewing_parties
       flash[:notice] = 'Viewing Party Succesfully Created'
       redirect_to user_path(viewing_party_params[:host])
     else
-      flash[:notice] = 'Incorrect Info'
+      flash[:notice] = 'All fields must be filled in and duration must be greater than movie runtime'
+      render :new
     end
   end
 

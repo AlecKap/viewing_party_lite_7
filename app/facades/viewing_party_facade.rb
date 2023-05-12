@@ -8,6 +8,10 @@ class ViewingPartyFacade
     @params[:user_id]
   end
 
+  def new_viewing_party
+    ViewingParty.new
+  end
+
   def other_users
     User.where.not(id: @params[:user_id])
   end
