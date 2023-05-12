@@ -27,19 +27,19 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 11 May 2023 23:27:51 GMT
+      - Fri, 12 May 2023 02:15:44 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=27660
+      - public, max-age=24434
       X-Memc:
       - HIT
       X-Memc-Key:
       - b5d517732f14375499b0689f0803e072
       X-Memc-Age:
-      - '15988'
+      - '26281'
       X-Memc-Expires:
-      - '12323'
+      - '2030'
       Etag:
       - W/"209f98e02bf8248856770d7b25d6ed04"
       Vary:
@@ -48,15 +48,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 e158a5cd644f102abc630a9f56b59d78.cloudfront.net (CloudFront)
+      - 1.1 23d87d8c2ce38e34462e6c134d187eea.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - kFn_MF4Zi_2kkDdtFiR2Ub7ja6dRQmLvtIekSz7ZV_hWxeISVQrywA==
+      - axPNf1HRcqCnkbcrBbqBNX7CEzSG8-Ax5vEwl7ozaeA28S-gMdZJKQ==
       Age:
-      - '4873'
+      - '154'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/aJCtkxLLzkk1pECehVjKHA2lBgw.jpg","belongs_to_collection":{"id":10,"name":"Star
@@ -71,7 +71,7 @@ http_interactions:
         Ltd.","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1980-05-20","revenue":538400000,"runtime":124,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
         Adventure Continues...","title":"The Empire Strikes Back","video":false,"vote_average":8.4,"vote_count":15315}'
-  recorded_at: Fri, 12 May 2023 00:49:04 GMT
+  recorded_at: Fri, 12 May 2023 02:18:18 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/1891/credits
@@ -99,19 +99,19 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 11 May 2023 23:27:52 GMT
+      - Fri, 12 May 2023 02:15:45 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=26387
+      - public, max-age=28368
       X-Memc:
       - HIT
       X-Memc-Key:
       - e1ccf43be5e9ccdffe2f9be475252718
       X-Memc-Age:
-      - '22140'
+      - '6901'
       X-Memc-Expires:
-      - '2104'
+      - '19265'
       Etag:
       - W/"143bf4a9c5c89082b71ed5e73b972f61"
       Vary:
@@ -120,15 +120,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 a44b9db7a2d103360945ab52619e5016.cloudfront.net (CloudFront)
+      - 1.1 f0b290c4e2273a7586bc6f080031d9bc.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - Wz5rbbv3auY_DGYKGAgrm_ksADZukhkb5qgzG1qqgiFhv4v562Luxg==
+      - GHpQ7v8zDIdQ5zUFkaj_RymyxHgH4rJjZXzdLkOxKwGjwqypCEyBhQ==
       Age:
-      - '4872'
+      - '153'
     body:
       encoding: ASCII-8BIT
       string: '{"id":1891,"cast":[{"adult":false,"gender":2,"id":2,"known_for_department":"Acting","name":"Mark
@@ -393,5 +393,5 @@ http_interactions:
         Bream","original_name":"Reg Bream","popularity":0.6,"profile_path":null,"credit_id":"5c3f42219251417a60ad5764","department":"Art","job":"Draughtsman"},{"adult":false,"gender":0,"id":2922346,"known_for_department":"Sound","name":"London
         Symphony Orchestra","original_name":"London Symphony Orchestra","popularity":0.694,"profile_path":null,"credit_id":"5ff37a8067203d003dcbd373","department":"Sound","job":"Musician"},{"adult":false,"gender":0,"id":3997531,"known_for_department":"Sound","name":"Peter
         Sutton","original_name":"Peter Sutton","popularity":0.6,"profile_path":null,"credit_id":"642f09e14544af00e09c264c","department":"Sound","job":"Sound"}]}'
-  recorded_at: Fri, 12 May 2023 00:49:04 GMT
+  recorded_at: Fri, 12 May 2023 02:18:18 GMT
 recorded_with: VCR 6.1.0

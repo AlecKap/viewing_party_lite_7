@@ -1,16 +1,17 @@
-<h3><%= @facade.movie.title %></h3>
+<h2>Movie Details Page</h2>
+<h3 class='title'><%= @facade.movie.title %></h3>
 
 <%= button_to 'Discover Page', user_discover_index_path(@facade.user_id), method: :get %>
 
 <%= button_to "Create Viewing Party for #{@facade.movie.title}", user_discover_index_path(@facade.user_id), method: :get %>
 
 <h4 class='vote_average'><%= @facade.movie.vote_average %></h4> 
-<h4 class='runtime'><%= @facade.movie.runtime %></h4>
-<h4 class='genre'><%= @facade.movie.genre %></h4>
+<h4 class='runtime'><%= @facade.runtime %></h4>
+<h4 class='genre'><%= @facade.genres %></h4>
 <br>
 <h4 class='summary'><%= @facade.movie.summary %></h4>
-<h4 class='cast'><%= @facade.movie.cast %></h4>
-<h4 class='reviews'><%= @facade.movie.reviews %></h4>
+<h4 class='cast'><%= @facade.cast %></h4>
+<h4 class='reviews'><%= @facade.reviews %></h4>
 
 
 
