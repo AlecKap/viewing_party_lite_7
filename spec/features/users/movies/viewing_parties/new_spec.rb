@@ -17,24 +17,46 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
       within('.create_viewing_party') do
         expect(page).to have_content('Movie Title: Scott Pilgrim vs. the World')
         expect(page).to have_content('Duration of Party:')
-        expect(page).to have_field('duration', value: 112)
-        expect(page).to have_content('Day: ')
-        expect(page).to have_field('day')
+        expect(page).to have_field('viewing_party[duration]', with: 112)
+        expect(page).to have_content('Day:')
+        expect(page).to have_field('viewing_party[day]')
         expect(page).to have_content('Start Time:')
-        expect(page).to have_field('start_time')
+        expect(page).to have_css('.start_time')
         expect(page).to have_content('Invite Other Users')
+
+        within("#invite_user_#{@user2.id}") do
+          expect(page).to have_unchecked_field('user_ids[ ]')
+          expect(page).to have_content('Emma Watson, hermione.foreva@gmail.com')
+        end
+
+        within("#invite_user_#{@user3.id}") do
+          expect(page).to have_unchecked_field('user_ids[ ]')
+          expect(page).to have_content('Sigmund Freud, its.all.about.mom@gmail.com')
+        end
+
+        expect(page).to_not have_css("#invite_user_#{@user1.id}")
         expect(page).to have_button('Create Party')
       end
     end
 
-    it 'I see all a checkbox list of all users', :vcr do
-      within('.invite_other_users') do
-        expect(page).to have_content
-      end
-    end
-
     it 'I can fill out form and a new viewing party is created', :vcr do
+      fill_in 'viewing_party[duration]', with: 140
+      fill_in 'viewing_party[day]', with: '07/02/2023'
+      select '20', from: 'viewing_party[start_time(4i)]'
+      select '30', from: 'viewing_party[start_time(5i)]'
 
+      within("#invite_user_#{@user2.id}") do
+        check 'user_ids[ ]'
+      end
+
+      within("#invite_user_#{@user3.id}") do
+        check 'user_ids[ ]'
+      end
+
+      click_button 'Create Party'
+
+      expect(current_path).to eq(user_path(@user1))
+      # expect(page).to have_content('Scott Pilgrim vs. the World')
     end
   end
 end
