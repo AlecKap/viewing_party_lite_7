@@ -1,16 +1,26 @@
-<h3><%= @facade.movie.title %></h3>
+<h2>Movie Details Page</h2>
+<h3 class='title'><%= @facade.movie.title %></h3>
 
 <%= button_to 'Discover Page', user_discover_index_path(@facade.user_id), method: :get %>
-
-<%= button_to "Create Viewing Party for #{@facade.movie.title}", user_discover_index_path(@facade.user_id), method: :get %>
-
-<h4 class='vote_average'><%= @facade.movie.vote_average %></h4> 
-<h4 class='runtime'><%= @facade.movie.runtime %></h4>
-<h4 class='genre'><%= @facade.movie.genre %></h4>
 <br>
-<h4 class='summary'><%= @facade.movie.summary %></h4>
-<h4 class='cast'><%= @facade.movie.cast %></h4>
-<h4 class='reviews'><%= @facade.movie.reviews %></h4>
+<%= button_to "Create Viewing Party for #{@facade.movie.title}", user_discover_index_path(@facade.user_id), method: :get %>
+<section class='movie_details'>
+  <h4 class='vote_average'>Vote: <%= @facade.movie.vote_average %></h4> 
+  <h4 class='runtime'>Runtime: <%= @facade.runtime %></h4>
+  <h4 class='genre'>Genres: <%= @facade.genres %></h4>
+</section>
+<br>
+<h4>Summary:</h4>
+  <p class='summary'><%= @facade.movie.summary %></p>
+<h4>Cast:</h4>
+  <p class='cast'><% @facade.cast.each do|cast| %></p>
+    <p><%= cast %></p>
+  <% end %>
+<h4 class='total_reviews'> <%= @facade.total_reviews %> Reviews:</h4> 
+<p class='reviews'><% @facade.reviews.each do |review| %></p>
+  <p><%= review %></p>
+  <br>
+<% end %>
 
 
 
