@@ -42,8 +42,7 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
     it 'I can fill out form and a new viewing party is created', :vcr do
       fill_in 'viewing_party[duration]', with: 140
       fill_in 'viewing_party[day]', with: '07/02/2023'
-      select '20', from: 'viewing_party[start_time(4i)]'
-      select '30', from: 'viewing_party[start_time(5i)]'
+      fill_in 'viewing_party[start_time]', with: '0700PM'
 
       within("#invite_user_#{@user2.id}") do
         check 'invited_users[]'
@@ -62,8 +61,7 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
     it 'I cant fill it out with a duration less than the movie runtime', :vcr do
       fill_in 'viewing_party[duration]', with: 50
       fill_in 'viewing_party[day]', with: '07/02/2023'
-      select '20', from: 'viewing_party[start_time(4i)]'
-      select '30', from: 'viewing_party[start_time(5i)]'
+      fill_in 'viewing_party[start_time]', with: '0700PM'
 
       within("#invite_user_#{@user2.id}") do
         check 'invited_users[]'
