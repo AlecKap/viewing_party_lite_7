@@ -1,7 +1,27 @@
-<h2><%= @user.name %>'s Dashboard</h2>
+<h2><%= @facade.user.name %>'s Dashboard</h2>
 
-<%= button_to 'Discover Movies', user_discover_index_path(@user), method: :get%>
+<%= button_to 'Discover Movies', user_discover_index_path(@facade.user), method: :get%>
 
 <section id='user_viewing_parties'>
   <h3>My Viewing Parties</h3>
+  <% @facade.user.viewing_parties.each do |party| %>
+    <div class='viewing_party_<%= party.id %>'>
+      <div class='movie_img'>
+        <img src="<%= @facade.movie_img(party.movie_id) %>" alt='<%= party.movie_title %> movie_poster' width='200' height='200'>
+      </div>
+      <p>Movie: <%= link_to "#{party.movie_title}", user_movie_path(@facade.user, party.movie_id) %></p>
+      <p>Day: <%= party.day %></p>
+      <p>Time: <%= party.start_time %></p>
+      <p>I am <%= party.host_check(@facade.user.id) %></p>
+      <p>Attendees: <% party.users.each do |user| %></p>
+        <% if party.host == @facade.user.id && @facade.user.name == user.name %>
+          <b><%= user.name %></b>
+        <% else %>
+          <p><%= user.name %></p>
+        <% end %>
+      <% end %>
+      <br>
+      <br>
+    </div>
+  <% end %>
 </section>
