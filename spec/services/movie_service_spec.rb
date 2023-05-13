@@ -83,5 +83,18 @@ RSpec.describe MovieService do
         expect(review_data[:content]).to be_a(String)
       end
     end
+
+    context '#movie_images', :vcr do
+      it 'returns movie images' do
+        search = MovieService.new.movie_images('12444')
+        expect(search).to be_a(Hash)
+
+        expect(search[:backdrops]).to be_an(Array)
+        image_data = search[:backdrops].first
+
+        expect(image_data).to have_key(:file_path)
+        expect(image_data[:file_path]).to be_a(String)
+      end
+    end
   end
 end

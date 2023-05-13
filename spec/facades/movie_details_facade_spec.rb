@@ -38,8 +38,8 @@ RSpec.describe MovieDetailsFacade do
 
   describe 'cast details' do
     describe '#cast', :vcr do
-      it 'returns a string' do
-        expect(@facade.cast).to be_a(String)
+      it 'returns a array' do
+        expect(@facade.cast).to be_a(Array)
       end
     end
   end
