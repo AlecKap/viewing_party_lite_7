@@ -12,23 +12,26 @@ RSpec.describe ViewingParty, type: :model do
       @user2 = User.create!(name: 'Jiminy Cricket', email: 'jim.cricket@gmail.com')
       @user3 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com')
       @viewing_party1 = ViewingParty.create!(movie_title: 'Selena',
-                                             duration: 127,
+                                             duration: 180,
                                              day: '09/28/2023',
                                              start_time: '6:30pm',
                                              host: @user1.id,
-                                             movie_id: 16052) # potentially string interpolate the user
+                                             movie_id: 16052,
+                                             movie_runtime: 127)
       @viewing_party2 = ViewingParty.create!(movie_title: 'Dumbo',
-                                             duration: 64,
+                                             duration: 90,
                                              day: '07/17/2023',
                                              start_time: '4:30pm',
                                              host: @user2.id,
-                                             movie_id: 11360)
+                                             movie_id: 11360,
+                                             movie_runtime: 64)
       @viewing_party3 = ViewingParty.create!(movie_title: 'Miracle',
-                                             duration: 135,
+                                             duration: 150,
                                              day: '05/13/2023',
                                              start_time: '7:30pm',
                                              host: @user2.id,
-                                             movie_id: 14292)
+                                             movie_id: 14292,
+                                             movie_runtime: 135)
       UserViewingParty.create!(user: @user1, viewing_party: @viewing_party1)
       UserViewingParty.create!(user: @user1, viewing_party: @viewing_party2)
       UserViewingParty.create!(user: @user2, viewing_party: @viewing_party1)
