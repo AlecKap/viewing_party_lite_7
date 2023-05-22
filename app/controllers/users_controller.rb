@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if user.save
       redirect_to user_path(user)
     else
-      flash[:notice] = 'Unable to Register: Email Already in Use or Missing Input'
+      flash[:notice] = user.errors.full_messages
       redirect_to register_path
     end
   end
@@ -24,6 +24,6 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end

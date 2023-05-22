@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe 'New Viewing Party Page', type: :feature do
   describe 'As a user, when I visit the new viewing party page', :vcr do
     before(:each) do
-      @user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com')
-      @user2 = User.create!(name: 'Emma Watson', email: 'hermione.foreva@gmail.com')
-      @user3 = User.create!(name: 'Sigmund Freud', email: 'its.all.about.mom@gmail.com')
+      @user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com', password: 'password123', password_confirmation: 'password123')
+      @user2 = User.create!(name: 'Emma Watson', email: 'hermione.foreva@gmail.com', password: 'password123', password_confirmation: 'password123')
+      @user3 = User.create!(name: 'Sigmund Freud', email: 'its.all.about.mom@gmail.com', password: 'password123', password_confirmation: 'password123')
       visit user_discover_index_path(@user1)
       fill_in 'search', with: 'Scott Pilgrim vs. the World'
       click_button 'Find Movies'

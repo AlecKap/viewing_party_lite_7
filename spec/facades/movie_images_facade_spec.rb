@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe MovieImagesFacade do
   before :each do
-    user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com')
+    user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com', password: 'password123', password_confirmation: 'password123')
     @params = {
       movie_id: 12444,
       id: user1.id

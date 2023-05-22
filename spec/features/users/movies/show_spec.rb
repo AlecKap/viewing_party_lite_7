@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Movie Details Page', type: :feature do
   describe 'As a user, when I visit a movies detail page', :vcr do
     before(:each) do
-      @user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com')
+      @user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com', password: 'password123', password_confirmation: 'password123')
       visit user_discover_index_path(@user1)
       fill_in 'search', with: 'Harry Potter and the Goblet of Fire'
       click_button 'Find Movies'

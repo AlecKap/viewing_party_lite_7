@@ -14,22 +14,30 @@ RSpec.describe 'user registration page', type: :feature do
 
       fill_in 'user[name]', with: 'Rebecca Black'
       fill_in 'user[email]', with: 'rebecca.black@gmail.com'
+      fill_in 'Password:', with: 'password123'
+      fill_in 'Password Confirmation:', with: 'password123'
+
       click_button 'Register User'
 
       expect(page).to have_content("Rebecca Black's Dashboard")
     end
 
     it 'will only accept unique emails' do
-      User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com')
+      @user3 = User.create!(name: 'Rebecca Black',
+                            email: 'rebecca.black@gmail.com',
+                            password: 'password123',
+                            password_confirmation: 'password123')
 
       visit register_path
 
       fill_in 'user[name]', with: 'Rebecca Black'
       fill_in 'user[email]', with: 'rebecca.black@gmail.com'
+      fill_in 'Password:', with: 'password123'
+      fill_in 'Password Confirmation:', with: 'password123'
       click_button 'Register User'
 
       expect(current_path).to eq(register_path)
-      expect(page).to have_content('Unable to Register: Email Already in Use or Missing Input')
+      expect(page).to have_content('Email has already been taken')
     end
   end
 end

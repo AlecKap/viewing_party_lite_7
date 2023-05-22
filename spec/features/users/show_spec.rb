@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe 'User Dsahboard Page' do
   describe 'When I visit the users show page' do
     before :each do
-      @user1 = User.create!(name: 'Reid', email: 'reid@gmail.com')
-      @user2 = User.create!(name: 'Jiminy Cricket', email: 'jim.cricket@gmail.com')
-      @user3 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com')
+      @user1 = User.create!(name: 'Reid', email: 'reid@gmail.com', password: 'password123', password_confirmation: 'password123')
+      @user2 = User.create!(name: 'Jiminy Cricket', email: 'jim.cricket@gmail.com', password: 'password123', password_confirmation: 'password123')
+      @user3 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com', password: 'password123', password_confirmation: 'password123')
       @viewing_party1 = ViewingParty.create!(movie_title: 'Selena',
                                              duration: 180,
                                              day: '09/28/2023',
