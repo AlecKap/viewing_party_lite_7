@@ -11,9 +11,13 @@ RSpec.describe 'user registration page', type: :feature do
       expect(page).to have_content('Email:')
       expect(page).to have_field('user[email]')
       expect(page).to have_button('Register User')
-
+      expect(page).to have_field(:user_password)
+      expect(page).to have_field(:user_password_confirmation)
+      
       fill_in 'user[name]', with: 'Rebecca Black'
       fill_in 'user[email]', with: 'rebecca.black@gmail.com'
+      fill_in :user_password, with: 'FRIDAY4eva'
+      fill_in :user_password_confirmation, with: 'FRIDAY4eva'
       click_button 'Register User'
 
       expect(page).to have_content("Rebecca Black's Dashboard")
