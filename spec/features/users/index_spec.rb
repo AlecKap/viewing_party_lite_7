@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'landing page', type: :feature do
   describe 'As a user, when I visit the landing page' do
     before(:each) do
-      @user1 = User.create!(name: 'Bob Saget', email: 'bob.saget@gmail.com')
-      @user2 = User.create!(name: 'Ellen Degeneres', email: 'ellen.degeneres@gmail.com')
+      @user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com', password: 'FRIDAY4eva', password_confirmation: 'FRIDAY4eva')
+      @user2 = User.create!(name: 'Emma Watson', email: 'hermione.foreva@gmail.com', password: 'password123', password_confirmation: 'password123')
 
       visit root_path
     end
@@ -19,6 +19,14 @@ RSpec.describe 'landing page', type: :feature do
       click_link 'Create New User'
 
       expect(current_path).to eq(register_path)
+    end
+
+    it 'I see a link to log in to a user account' do
+      expect(page).to have_link('Login')
+
+      click_link 'Login'
+
+      expect(current_path).to eq(login_path)
     end
 
     it 'I see a list of existing users which each link to user dashboard' do

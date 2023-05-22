@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
     it { should validate_uniqueness_of(:email) }
     it { should validate_presence_of(:password_digest) }
     it { should have_secure_password }
-    it 'passwords' do
+    it 'does not store unencrypted passwords' do
       user = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com', password: 'FRIDAY4eva', password_confirmation: 'FRIDAY4eva')
       expect(user).to_not have_attribute(:password)
       expect(user.password_digest).to_not eq('FRIDAY4eva')

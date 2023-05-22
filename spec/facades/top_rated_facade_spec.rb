@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe TopRatedFacade, :vcr do
   before(:each) do
-    @user = User.create!(name: 'Emma Watson', email: 'hermione.foreva@gmail.com')
+    @user = User.create!(name: 'Emma Watson', email: 'hermione.foreva@gmail.com', password: 'password123', password_confirmation: 'password123')
     @params = { user_id: @user.id, search: 'top%20rated' }
     @facade = TopRatedFacade.new(@params)
   end

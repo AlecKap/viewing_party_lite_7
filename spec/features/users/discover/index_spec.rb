@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Discover Movies Page' do
   describe "As a user, when I visit the '/users/:id/discover' path," do
     before(:each) do
-      @user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com')
+      @user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com', password: 'FRIDAY4eva', password_confirmation: 'FRIDAY4eva')
       visit user_discover_index_path(@user1)
     end
 

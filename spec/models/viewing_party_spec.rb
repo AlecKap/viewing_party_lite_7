@@ -8,9 +8,9 @@ RSpec.describe ViewingParty, type: :model do
 
   describe 'instance methods' do
     before :each do
-      @user1 = User.create!(name: 'Reid', email: 'reid@gmail.com')
-      @user2 = User.create!(name: 'Jiminy Cricket', email: 'jim.cricket@gmail.com')
-      @user3 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com')
+      @user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com', password: 'FRIDAY4eva', password_confirmation: 'FRIDAY4eva')
+      @user2 = User.create!(name: 'Emma Watson', email: 'hermione.foreva@gmail.com', password: 'password123', password_confirmation: 'password123')
+      @user3 = User.create!(name: 'Sigmund Freud', email: 'itsallaboutmom@gmail.com', password: 'phalliceverything1', password_confirmation: 'phalliceverything1')
       @viewing_party1 = ViewingParty.create!(movie_title: 'Selena',
                                              duration: 180,
                                              day: '09/28/2023',
@@ -62,9 +62,9 @@ RSpec.describe ViewingParty, type: :model do
 
   describe 'instance_methods' do
     before(:each) do
-      @user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com')
-      @user2 = User.create!(name: 'Emma Watson', email: 'hermione.foreva@gmail.com')
-      @user3 = User.create!(name: 'Sigmund Freud', email: 'its.all.about.mom@gmail.com')
+      @user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com', password: 'FRIDAY4eva', password_confirmation: 'FRIDAY4eva')
+      @user2 = User.create!(name: 'Emma Watson', email: 'hermione.foreva@gmail.com', password: 'password123', password_confirmation: 'password123')
+      @user3 = User.create!(name: 'Sigmund Freud', email: 'itsallaboutmom@gmail.com', password: 'phalliceverything1', password_confirmation: 'phalliceverything1')
       @viewing_party1 = ViewingParty.create!(
         movie_id: 123,
         movie_title: 'Fern Gully',

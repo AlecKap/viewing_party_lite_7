@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe 'New Viewing Party Page', type: :feature do
   describe 'As a user, when I visit the new viewing party page', :vcr do
     before(:each) do
-      @user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com')
-      @user2 = User.create!(name: 'Emma Watson', email: 'hermione.foreva@gmail.com')
-      @user3 = User.create!(name: 'Sigmund Freud', email: 'its.all.about.mom@gmail.com')
+      @user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com', password: 'FRIDAY4eva', password_confirmation: 'FRIDAY4eva')
+      @user2 = User.create!(name: 'Emma Watson', email: 'hermione.foreva@gmail.com', password: 'password123', password_confirmation: 'password123')
+      @user3 = User.create!(name: 'Sigmund Freud', email: 'itsallaboutmom@gmail.com', password: 'phalliceverything1', password_confirmation: 'phalliceverything1')
       visit user_discover_index_path(@user1)
       fill_in 'search', with: 'Scott Pilgrim vs. the World'
       click_button 'Find Movies'
@@ -31,7 +31,7 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
 
         within("#invite_user_#{@user3.id}") do
           expect(page).to have_unchecked_field('invited_users[]')
-          expect(page).to have_content('Sigmund Freud, its.all.about.mom@gmail.com')
+          expect(page).to have_content('Sigmund Freud, itsallaboutmom@gmail.com')
         end
 
         expect(page).to_not have_css("#invite_user_#{@user1.id}")
