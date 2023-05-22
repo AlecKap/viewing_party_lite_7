@@ -27,34 +27,34 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Sat, 13 May 2023 17:24:28 GMT
+      - Mon, 22 May 2023 20:08:04 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=26886
+      - public, max-age=21834
       X-Memc:
       - HIT
       X-Memc-Key:
       - b5d517732f14375499b0689f0803e072
       X-Memc-Age:
-      - '13520'
+      - '20758'
       X-Memc-Expires:
-      - '9109'
+      - '3507'
       Etag:
-      - W/"01e8055e4d3168727f21e927746668f5"
+      - W/"10a18988894b1b12e3bc6a711c4f8da9"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 f91d1b84d49f9e5cc7391ee66e3cbed0.cloudfront.net (CloudFront)
+      - 1.1 d4fb3448d1a8d3229dcf0a89f4bbe7e8.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P3
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 8KSk8K8i85GTGSmBlV9pXzRNMVcx6J2LY71O4Z4xiG4OBlRM3OYSUQ==
+      - tgqRr77tjc-3xBU7IWqWqLAYPlkT2JoSBwdW3dZwEzujmKCixG-T5A==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/aJCtkxLLzkk1pECehVjKHA2lBgw.jpg","belongs_to_collection":{"id":10,"name":"Star
@@ -65,9 +65,9 @@ http_interactions:
         from aging master Yoda. But Darth Vader is more determined than ever to capture
         Luke. Meanwhile, rebel leader Princess Leia, cocky Han Solo, Chewbacca, and
         droids C-3PO and R2-D2 are thrown into various stages of capture, betrayal
-        and despair.","popularity":32.074,"poster_path":"/2l05cFWJacyIsTpsqSgH0wQXe4V.jpg","production_companies":[{"id":1,"logo_path":"/o86DbpburjxrqAzEDhXZcyE8pDb.png","name":"Lucasfilm
+        and despair.","popularity":38.104,"poster_path":"/2l05cFWJacyIsTpsqSgH0wQXe4V.jpg","production_companies":[{"id":1,"logo_path":"/o86DbpburjxrqAzEDhXZcyE8pDb.png","name":"Lucasfilm
         Ltd.","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1980-05-20","revenue":538400000,"runtime":124,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
-        Adventure Continues...","title":"The Empire Strikes Back","video":false,"vote_average":8.392,"vote_count":15321}'
-  recorded_at: Sat, 13 May 2023 17:24:28 GMT
+        Adventure Continues...","title":"The Empire Strikes Back","video":false,"vote_average":8.393,"vote_count":15353}'
+  recorded_at: Mon, 22 May 2023 20:08:04 GMT
 recorded_with: VCR 6.1.0

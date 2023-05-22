@@ -20,6 +20,7 @@ RSpec.describe 'user registration page', type: :feature do
       fill_in :user_password_confirmation, with: 'FRIDAY4eva'
       click_button 'Register User'
 
+      expect(page).to have_content("Welcome, #{user.username}")
       expect(page).to have_content("Rebecca Black's Dashboard")
     end
 

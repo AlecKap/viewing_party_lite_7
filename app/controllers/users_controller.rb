@@ -12,12 +12,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
+    new_user = User.new(user_params)
     if user.save
-      redirect_to user_path(user)
+      session[:user_id] = new_user.id
+      flash[:success] = "Welcome, #{new_user.username}!"
+      redirect_to user_path(new_user)
     else
       flash[:notice] = 'Unable to Register: Email Already in Use or Missing Input'
-      redirect_to register_path
+      render :new
     end
   end
 
