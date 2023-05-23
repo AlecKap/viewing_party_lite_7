@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login_user'
-  delete '/users/:id', to: 'users#logout_of_session'
+  delete '/logout', to: 'users#logout_of_session'
 
   resources :users, only: %i[show create] do
     resources :discover, only: %i[index], controller: 'users/discover'

@@ -32,6 +32,7 @@ RSpec.describe 'User Dsahboard Page' do
       UserViewingParty.create!(user: @user2, viewing_party: @viewing_party1)
       UserViewingParty.create!(user: @user2, viewing_party: @viewing_party2)
       UserViewingParty.create!(user: @user3, viewing_party: @viewing_party1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
       visit user_path(@user1)
     end
 

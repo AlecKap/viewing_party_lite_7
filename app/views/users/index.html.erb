@@ -1,6 +1,15 @@
 <h2>Landing Page</h2>
 <% if current_user %>
-  <%= button_to "Log Out", user_path(@user_session), method: :delete%>
+  <%= button_to "Log Out", logout_path, method: :delete%>
+  <br>
+  <div id='user_list'>
+    <h3>User Emails:</h3>
+    <ol>
+      <% @users.each do |user| %>
+        <li><%= user.email %></li>
+      <% end %>
+    </ol>
+  </div>
 <% else %>
   <%= link_to "Create New User", register_path, class: "btn btn-primary" %>
   <br>

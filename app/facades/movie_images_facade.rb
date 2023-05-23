@@ -1,10 +1,8 @@
 class MovieImagesFacade
-  def initialize(params)
-    @params = params
-  end
+  attr_reader :user
 
-  def user
-   User.find(@params[:id])
+  def initialize(user)
+    @user = user
   end
 
   def movie_img(movie_id)
@@ -15,10 +13,10 @@ class MovieImagesFacade
   private
 
   def service
-    @_service = MovieService.new
+    @_service ||= MovieService.new
   end
 
   def movie_images_data(movie_id)
-    @_movie_images_data = service.movie_images(movie_id)
+    @_movie_images_data ||= service.movie_images(movie_id)
   end
 end
