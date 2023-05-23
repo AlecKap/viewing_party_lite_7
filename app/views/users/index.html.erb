@@ -1,7 +1,11 @@
 <h2>Landing Page</h2>
 
-<%= link_to "Create New User", register_path, class: "btn btn-primary" %>
-<%= link_to "Login", login_path %>
+<% if current_user %>
+  <%= link_to "Log Out", logout_path %>
+<% else %>
+  <%= link_to "Create New User", register_path, class: "btn btn-primary" %>
+  <%= link_to "Login", login_path, class: "btn btn-primary" %>
+<% end %>
 
 <div id='user_list'>
   <h3>All Users:</h3>
