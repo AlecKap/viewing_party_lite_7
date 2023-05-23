@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
   def index
-    @user_session = session[:user_id]
     @users = User.all
   end
 
   def show
-    @facade = MovieImagesFacade.new(current_user)
+    if current_user
+      @facade = MovieImagesFacade.new(current_user)
+    else
+      flash[:notice] = 'lol... nice try, but you must login to access the page you are looking for.'
+      redirect_to root_path
+    end
   end
 
   def new

@@ -47,6 +47,16 @@ RSpec.describe 'landing page', type: :feature do
       expect(page).to_not have_content(@user2.email)
       expect(page).to_not have_content(@user2.email)
     end
+
+    it "And I try to visit '/dashboard', I remain on the landing page and
+      I see a message telling me that I must be logged in or
+      registered to access my dashboard" do
+
+      visit '/dashboard'
+
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content('lol... nice try, but you must login to access the page you are looking for.')
+    end
   end
 
   describe 'As a user, when I visit the landing page' do
@@ -61,6 +71,22 @@ RSpec.describe 'landing page', type: :feature do
     it 'I see the title of application' do
       expect(page).to have_content('Viewing Party')
     end
+
+    it 'I see a link to go back to the landing page' do
+      expect(page).to have_link('Landing Page')
+
+      click_link 'Landing Page'
+
+      expect(current_path).to eq(root_path)
+    end
+
+    # it 'I see a link to go Back to the Dashboard' do
+    #   expect(page).to have_link('Back to the Dashboard')
+
+    #   click_link 'Back to the Dashboard'
+
+    #   expect(current_path).to eq(user_path(@user1))
+    # end
 
     it 'I do not see a button to create a new user' do
       expect(page).to_not have_link('Create New User')

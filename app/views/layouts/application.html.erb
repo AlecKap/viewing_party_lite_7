@@ -12,7 +12,7 @@
 
   <body>
     <%= link_to 'Landing Page', root_path %>
-
+    <%= link_to "Back to the Dashboard", "/dashboard" if current_user %>
     <h1>Viewing Party</h2>
 
     <% flash.each do |type, msg| %>
