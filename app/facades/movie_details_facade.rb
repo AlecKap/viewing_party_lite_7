@@ -1,15 +1,13 @@
 class MovieDetailsFacade
-  def initialize(params)
-    @params = params
-    @movie = movie
-  end
+  attr_reader :user
 
-  def user_id
-    @params[:user_id]
+  def initialize(user, movie_id)
+    @user = user
+    @movie_id = movie_id
   end
 
   def movie
-    @movie = Movie.new(movie_details_data)
+    Movie.new(movie_details_data)
   end
 
   def runtime
@@ -50,14 +48,14 @@ class MovieDetailsFacade
   end
 
   def movie_details_data
-    @_movie_details_data ||= service.movie_details(@params[:id])
+    @_movie_details_data ||= service.movie_details(@movie_id)
   end
 
   def cast_data
-    @_cast_data ||= service.movie_cast(@params[:id])
+    @_cast_data ||= service.movie_cast(@movie_id)
   end
 
   def movie_reviews_data
-    @_movie_reviews_data ||= service.movie_reviews_details(@params[:id])
+    @_movie_reviews_data ||= service.movie_reviews_details(@movie_id)
   end
 end

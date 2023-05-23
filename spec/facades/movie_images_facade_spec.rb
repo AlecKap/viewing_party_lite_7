@@ -9,7 +9,6 @@ RSpec.describe MovieImagesFacade do
 
   describe '#user', :vcr do
     it 'returns a integer' do
-      # binding.pry
       expect(@facade.user).to be_a(User)
     end
   end

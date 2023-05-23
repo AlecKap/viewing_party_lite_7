@@ -1,9 +1,9 @@
 <h2>Movie Details Page</h2>
 <h3 class='title'><%= @facade.movie.title %></h3>
 
-<%= button_to 'Discover Page', user_discover_index_path(@facade.user_id), method: :get %>
+<%= button_to 'Discover Page', users_discover_path, method: :get %>
 <br>
-<%= button_to "Create Viewing Party for #{@facade.movie.title}", new_user_movie_viewing_party_path(@facade.user_id, @facade.movie.id), method: :get %>
+<%= button_to "Create Viewing Party for #{@facade.movie.title}", new_user_movie_viewing_party_path(@facade.user, @facade.movie.id), method: :get %>
 <section class='movie_details'>
   <h4 class='vote_average'>Vote: <%= @facade.movie.vote_average %></h4> 
   <h4 class='runtime'>Runtime: <%= @facade.runtime %></h4>

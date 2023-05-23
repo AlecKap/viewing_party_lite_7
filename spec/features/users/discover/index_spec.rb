@@ -4,7 +4,8 @@ RSpec.describe 'Discover Movies Page' do
   describe "As a user, when I visit the '/users/:id/discover' path," do
     before(:each) do
       @user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com', password: 'password123', password_confirmation: 'password123')
-      visit user_discover_index_path(@user1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
+      visit users_discover_path
     end
 
     it 'I see a Top Rated Movies button that redirects to the Movie Results page', :vcr do
@@ -30,7 +31,7 @@ RSpec.describe 'Discover Movies Page' do
       fill_in 'search', with: ''
       click_button 'Find Movies'
 
-      expect(current_path).to eq(user_discover_index_path(@user1))
+      expect(current_path).to eq(users_discover_path)
       expect(page).to have_content('Search Field Cannot be Blank')
     end
   end

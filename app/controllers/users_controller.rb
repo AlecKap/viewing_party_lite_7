@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     if user.save
       session[:user_id] = user.id
       flash[:success] = "Welcome to Viewing Party, #{user.name}!"
-      redirect_to user_path(user)
+      redirect_to dashboard_path
     else
       flash[:notice] = user.errors.full_messages.to_sentence
       redirect_to register_path
@@ -55,7 +55,7 @@ class UsersController < ApplicationController
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome back to Viewing Party lite, #{user.name}!"
-      redirect_to user_path(user)
+      redirect_to dashboard_path
     else
       flash[:notice] = 'Sorry, these are not valid credentials. Please try again.'
       redirect_to login_path

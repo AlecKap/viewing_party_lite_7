@@ -3,18 +3,14 @@ require 'rails_helper'
 RSpec.describe MovieDetailsFacade do
   before :each do
     user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com', password: 'password123', password_confirmation: 'password123')
-
-    params = {
-      id: 1891,
-      user_id: user1.id
-    }
-    @facade = MovieDetailsFacade.new(params)
+    movie_id = 1891
+    @facade = MovieDetailsFacade.new(user1, movie_id)
   end
 
   describe 'movie details', :vcr do
-    describe '#user_id' do
-      it 'returns a integer' do
-        expect(@facade.user_id).to be_a(Integer)
+    describe '#user' do
+      it 'returns a User object' do
+        expect(@facade.user).to be_a(User)
       end
     end
 

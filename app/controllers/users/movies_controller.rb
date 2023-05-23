@@ -4,7 +4,12 @@ class Users::MoviesController < ApplicationController
   end
 
   def show
-    @facade = MovieDetailsFacade.new(params)
+    if current_user
+      @facade = MovieDetailsFacade.new(current_user, params[:id])
+    else
+      flash[:notice] = 'lol... nice try, but you must login to access the page you are looking for.'
+      redirect_to root_path
+    end
   end
 
   private
@@ -14,7 +19,7 @@ class Users::MoviesController < ApplicationController
       TopRatedFacade.new(params)
     elsif params[:search] == ''
       flash[:notice] = 'Search Field Cannot be Blank'
-      redirect_to user_discover_index_path(params[:user_id])
+      redirect_to users_discover_path
     elsif params[:search].present?
       SearchFacade.new(params)
     end
