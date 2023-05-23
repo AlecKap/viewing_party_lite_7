@@ -26,12 +26,8 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Mon, 22 May 2023 19:28:51 GMT
       Server:
       - openresty
-      Cache-Control:
-      - public, max-age=27927
       X-Memc:
       - HIT
       X-Memc-Key:
@@ -40,21 +36,27 @@ http_interactions:
       - '399'
       X-Memc-Expires:
       - '24909'
+      Date:
+      - Tue, 23 May 2023 16:30:40 GMT
+      Cache-Control:
+      - public, max-age=23724
       Etag:
       - W/"332cf74b0d4594e6c8047e8bb1a80aca"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 e559b1049f75d818d7420cfc59459998.cloudfront.net (CloudFront)
+      - 1.1 2049902380178fd7b885115d80ccf966.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 0TKa95wye5Qu_Ouqd46b7HiNFFTU9Td3Ud2F4uLHmGCUzQG0spcO_g==
+      - iY8U0NaM2jjD1OF7E405OV4tW1h_cZeVVk4aE3gGHGjiWS8RrFxBjQ==
+      Age:
+      - '1170'
     body:
       encoding: ASCII-8BIT
       string: '{"id":12444,"page":1,"results":[{"author":"ohlalipop","author_details":{"name":"","username":"ohlalipop","avatar_path":"/https://secure.gravatar.com/avatar/d43accfe23739fc82d4a51f04c51b70e.jpg","rating":null},"content":"I''ve
@@ -71,5 +73,5 @@ http_interactions:
         that part. Harry looked cute for me in that part. \r\n\r\n\r\nAll in all,
         I was satisfied. I''m looking forward to watch the next part and I can''t
         wait. My rate for this movie is A.","created_at":"2017-02-09T10:15:12.120Z","id":"589c4130925141254b00343d","updated_at":"2021-06-23T15:57:53.586Z","url":"https://www.themoviedb.org/review/589c4130925141254b00343d"}],"total_pages":1,"total_results":1}'
-  recorded_at: Mon, 22 May 2023 19:28:51 GMT
+  recorded_at: Tue, 23 May 2023 16:50:10 GMT
 recorded_with: VCR 6.1.0
