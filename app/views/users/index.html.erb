@@ -1,7 +1,8 @@
 <h2>Landing Page</h2>
 
 <%= link_to "Create New User", register_path, class: "btn btn-primary" %>
-
+<br>
+<%= link_to "Login as an Existing User", login_path  %>
 <div id='user_list'>
   <h3>All Users:</h3>
   <% @users.each do |user| %>

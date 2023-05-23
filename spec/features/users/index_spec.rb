@@ -21,6 +21,14 @@ RSpec.describe 'landing page', type: :feature do
       expect(current_path).to eq(register_path)
     end
 
+    it 'I see a link to login as an existing user' do
+      expect(page).to have_link('Login as an Existing User')
+
+      click_link 'Login as an Existing User'
+
+      expect(current_path).to eq(login_path)
+    end
+
     it 'I see a list of existing users which each link to user dashboard' do
       within('div#user_list') do
         expect(page).to have_content('All Users:')

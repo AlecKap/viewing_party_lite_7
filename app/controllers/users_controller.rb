@@ -21,8 +21,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def login_form
+  end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+    if user.authenticate(params[:password])
+      flash[:success] = "Welcome back to Viewing Party lite, #{user.name}!"
+      redirect_to user_path(user)
+    else
+      flash[:notice] = 'Sorry, these are not credentials. Please try again.'
+      render :login_form
+    end
+  end
+
   private
-  
+
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
