@@ -31,8 +31,8 @@ RSpec.describe 'landing page', type: :feature do
 
     it 'I see a list of existing users which each link to user dashboard if I am logged in as a user' do
       expect(page).to_not have_content('All Users:')
-      expect(page).to_not have_link(@user1.name)
-      expect(page).to_not have_link(@user2.name)
+      expect(page).to_not have_content(@user1.name)
+      expect(page).to_not have_content(@user2.name)
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
 
@@ -40,18 +40,8 @@ RSpec.describe 'landing page', type: :feature do
 
       within('.user_list') do
         expect(page).to have_content('All Users:')
-        expect(page).to have_link(@user1.name)
-        expect(page).to have_link(@user2.name)
-
-        click_link @user1.name
-        expect(current_path).to eq(user_path(@user1))
-      end
-
-      visit root_path
-
-      within('.user_list') do
-        click_link @user2.name
-        expect(current_path).to eq(user_path(@user2))
+        expect(page).to have_content(@user1.name)
+        expect(page).to have_content(@user2.name)
       end
     end
 
@@ -61,6 +51,13 @@ RSpec.describe 'landing page', type: :feature do
       click_link 'Landing Page'
 
       expect(current_path).to eq(root_path)
+    end
+
+    it 'if I try to visit dashboard without first being logged in I remain on landing page with a message' do
+      visit user_path(@user1)
+
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content('You must be logged in to view this page')
     end
   end
 end

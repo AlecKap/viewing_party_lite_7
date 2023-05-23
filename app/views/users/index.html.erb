@@ -5,7 +5,7 @@
   <div class='user_list'>
     <h3>All Users:</h3>
     <% @users.each do |user| %>
-      <%= link_to "#{user.name}", user_path(user) %>
+      <%= user.name %>
     <% end %>
   </div>
 <% else %>
