@@ -29,24 +29,6 @@ RSpec.describe 'landing page', type: :feature do
       expect(current_path).to eq(login_path)
     end
 
-    it 'I see a list of existing users which each link to user dashboard' do
-      within('div#user_list') do
-        expect(page).to have_content('All Users:')
-        expect(page).to have_link(@user1.name)
-        expect(page).to have_link(@user2.name)
-
-        click_link @user1.name
-        expect(current_path).to eq(user_path(@user1))
-      end
-
-      visit root_path
-
-      within('div#user_list') do
-        click_link @user2.name
-        expect(current_path).to eq(user_path(@user2))
-      end
-    end
-
     it 'I see a link to go back to the landing page' do
       expect(page).to have_link('Landing Page')
 

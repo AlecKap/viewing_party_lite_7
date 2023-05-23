@@ -17,13 +17,23 @@ RSpec.describe 'Logging In' do
     expect(current_path).to eq(user_path(@user))
   end
 
-  it 'cannot log in with bad credentials' do
+  it 'cannot log in with a non existant email' do
+    fill_in 'Email:', with: 'halie@gmail.com'
+    fill_in 'Password:', with: 'Password123'
+    click_on 'Log In'
+
+    expect(current_path).to eq(login_path)
+
+    expect(page).to have_content('Sorry, these are not valid credentials. Please try again.')
+  end
+
+  it 'cannot log in with invalid password' do
     fill_in 'Email:', with: @user.email
     fill_in 'Password:', with: 'Password123'
     click_on 'Log In'
 
     expect(current_path).to eq(login_path)
 
-    expect(page).to have_content('Sorry, these are not credentials. Please try again.')
+    expect(page).to have_content('Sorry, these are not valid credentials. Please try again.')
   end
 end

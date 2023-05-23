@@ -14,9 +14,11 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
+      session[:user_id] = user.id
+      flash[:success] = "Welcome, to Viewing Party, #{user.name}!"
       redirect_to user_path(user)
     else
-      flash[:notice] = user.errors.full_messages
+      flash[:notice] = user.errors.full_messages.to_sentence
       redirect_to register_path
     end
   end
@@ -26,12 +28,13 @@ class UsersController < ApplicationController
 
   def login_user
     user = User.find_by(email: params[:email])
-    if user.authenticate(params[:password])
+    if user&.authenticate(params[:password])
+      session[:user_id] = user.id
       flash[:success] = "Welcome back to Viewing Party lite, #{user.name}!"
       redirect_to user_path(user)
     else
-      flash[:notice] = 'Sorry, these are not credentials. Please try again.'
-      render :login_form
+      flash[:notice] = 'Sorry, these are not valid credentials. Please try again.'
+      redirect_to login_path
     end
   end
 
