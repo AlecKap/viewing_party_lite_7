@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @user_session = session[:user_id]
   end
 
   def show
@@ -15,12 +15,17 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
-      flash[:success] = "Welcome, to Viewing Party, #{user.name}!"
+      flash[:success] = "Welcome to Viewing Party, #{user.name}!"
       redirect_to user_path(user)
     else
       flash[:notice] = user.errors.full_messages.to_sentence
       redirect_to register_path
     end
+  end
+
+  def logout_of_session
+    session[:user_id] = nil
+    redirect_to root_path
   end
 
   def login_form

@@ -1,6 +1,6 @@
 <h2>Landing Page</h2>
 <% if current_user %>
-  <%= link_to "Log Out" %>
+  <%= button_to "Log Out", user_path(@user_session), method: :delete%>
 <% else %>
   <%= link_to "Create New User", register_path, class: "btn btn-primary" %>
   <br>
