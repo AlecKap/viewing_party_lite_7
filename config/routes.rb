@@ -9,14 +9,14 @@ Rails.application.routes.draw do
   delete '/logout', to: 'users#logout_of_session'
   get '/dashboard', to: 'users#show'
   get '/users/discover', to: 'users/discover#index'
-  # get '/users/movies', to: 'users/movies#index'
-  # get '/users/movies/:id', to: 'users/movies#show'
-  # get '/users/movies/:id/viewing_party', to: 'users/movies/viewing_parties'
+  # get '/movies', to: 'users/movies#index'
+  # get '/movies/:id', to: 'users/movies#show'
+  # get '/movies/:id/viewing_party', to: 'users/movies/viewing_parties#new'
+  # post '/movies/:id/viewing_party', to: 'users/movies/viewing_parties#create'
 
-  resources :users, only: %i[create] do
-    # resources :discover, only: %i[index], controller: 'users/discover'
-    resources :movies, only: %i[index show], controller: 'users/movies' do
-      resources :viewing_party, only: %i[new create], controller: 'users/movies/viewing_parties'
-    end
+  resources :movies, only: %i[index show], controller: 'users/movies' do
+    resources :viewing_party, only: %i[new create], controller: 'users/movies/viewing_parties'
   end
+  resources :users, only: %i[create]
+  # resources :discover, only: %i[index], controller: 'users/discover'
 end

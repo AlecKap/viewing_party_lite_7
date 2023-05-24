@@ -14,7 +14,7 @@ RSpec.describe 'Discover Movies Page' do
 
       click_link 'Find Top Rated Movies'
 
-      expect(current_path).to eq(user_movies_path(@user1))
+      expect(current_path).to eq(movies_path)
     end
 
     it 'I see a text field to enter keyword(s) to search by movie title and a button to submit', :vcr do
@@ -24,7 +24,7 @@ RSpec.describe 'Discover Movies Page' do
       fill_in 'search', with: 'Lion'
       click_button 'Find Movies'
 
-      expect(current_path).to eq(user_movies_path(@user1))
+      expect(current_path).to eq(movies_path)
     end
 
     it 'I cannot leave search field blank', :vcr do

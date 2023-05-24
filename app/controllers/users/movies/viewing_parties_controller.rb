@@ -1,6 +1,11 @@
 class Users::Movies::ViewingPartiesController < ApplicationController
   def new
-    @facade = ViewingPartyFacade.new(params)
+    if current_user
+      @facade = ViewingPartyFacade.new(current_user, params[:movie_id])
+    else
+      flash[:notice] = 'lol... nice try, but you must login to access the page you are looking for.'
+      redirect_to movie_path(params[:movie_id])
+    end
   end
 
   def create
@@ -11,7 +16,7 @@ class Users::Movies::ViewingPartiesController < ApplicationController
       redirect_to dashboard_path
     else
       flash[:notice] = 'All fields must be filled in and duration must be greater than movie runtime'
-      redirect_to new_user_movie_viewing_party_path(viewing_party_params[:host], viewing_party_params[:movie_id])
+      redirect_to new_movie_viewing_party_path(viewing_party_params[:movie_id])
     end
   end
 

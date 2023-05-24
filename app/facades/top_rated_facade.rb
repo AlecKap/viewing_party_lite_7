@@ -1,16 +1,14 @@
 class TopRatedFacade
-  def initialize(params)
-    @params = params
+  attr_reader :user
+
+  def initialize(user)
+    @user = user
   end
 
   def movies
-    @movies = top_rated_movies_data[:results].map do |movie_data|
+    top_rated_movies_data[:results].map do |movie_data|
       Movie.new(movie_data)
     end
-  end
-
-  def user_id
-    @params[:user_id]
   end
 
   private

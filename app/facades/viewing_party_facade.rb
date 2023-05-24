@@ -1,11 +1,9 @@
 class ViewingPartyFacade
-  def initialize(params)
-    @params = params
-    @movie = movie
-  end
+  attr_reader :user
 
-  def user_id
-    @params[:user_id]
+  def initialize(user, movie)
+    @user = user
+    @movie = movie
   end
 
   def new_viewing_party
@@ -13,7 +11,7 @@ class ViewingPartyFacade
   end
 
   def other_users
-    User.where.not(id: @params[:user_id])
+    User.where.not(id: @user)
   end
 
   def movie
@@ -31,6 +29,6 @@ class ViewingPartyFacade
   end
 
   def movie_details_data
-    @_movie_details_data ||= service.movie_details(@params[:movie_id])
+    @_movie_details_data ||= service.movie_details(@movie)
   end
 end

@@ -98,7 +98,7 @@ RSpec.describe 'User Dsahboard Page' do
 
           click_link 'Selena'
 
-          expect(current_path).to eq(user_movie_path(@user1, 16052))
+          expect(current_path).to eq(movie_path(16052))
         end
 
         visit dashboard_path
@@ -108,7 +108,7 @@ RSpec.describe 'User Dsahboard Page' do
 
           click_link 'Dumbo'
 
-          expect(current_path).to eq(user_movie_path(@user1, 11360))
+          expect(current_path).to eq(movie_path(11360))
         end
       end
     end

@@ -9,7 +9,7 @@
       <div class='movie_img'>
         <img src="<%= @facade.movie_img(party.movie_id) %>" alt='<%= party.movie_title %> movie_poster' width='200' height='200'>
       </div>
-      <p>Movie: <%= link_to "#{party.movie_title}", user_movie_path(@facade.user, party.movie_id) %></p>
+      <p>Movie: <%= link_to "#{party.movie_title}", movie_path(party.movie_id) %></p>
       <p>Day: <%= party.day %></p>
       <p>Time: <%= party.start_time %></p>
       <p>I am <%= party.host_check(@facade.user.id) %></p>

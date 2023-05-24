@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe SearchFacade, :vcr do
   before(:each) do
     @user = User.create!(name: 'Emma Watson', email: 'hermione.foreva@gmail.com', password: 'password123', password_confirmation: 'password123')
-    @params = { user_id: @user.id, search: 'harry potter' }
-    @facade = SearchFacade.new(@params)
+    @search = 'harry potter'
+    @facade = SearchFacade.new(@user, @search)
   end
 
   it 'returns an array of movies' do
@@ -12,7 +12,7 @@ RSpec.describe SearchFacade, :vcr do
     expect(@facade.movies.first).to be_a(Movie)
   end
 
-  it 'can return user id' do
-    expect(@facade.user_id).to be_a(Integer)
+  it 'can return a User object' do
+    expect(@facade.user).to be_a(User)
   end
 end

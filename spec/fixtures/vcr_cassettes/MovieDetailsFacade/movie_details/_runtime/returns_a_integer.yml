@@ -27,36 +27,36 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 23 May 2023 16:30:29 GMT
+      - Wed, 24 May 2023 02:35:26 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=28344
+      - public, max-age=27033
       X-Memc:
       - HIT
       X-Memc-Key:
       - b5d517732f14375499b0689f0803e072
       X-Memc-Age:
-      - '20223'
+      - '7580'
       X-Memc-Expires:
-      - '2089'
+      - '15874'
       Etag:
-      - W/"78493d1d91d2159f7cd25022a97f87cc"
+      - W/"978eed0490e103eb91c32714bdf0764c"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 3f8295ce0024dc68ca43a1b1a38c5bd6.cloudfront.net (CloudFront)
+      - 1.1 e4ca364cc5959e3bf697ae231c5b56b0.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P3
+      - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - VdT20iGx4xdRuHKYN_d4O9CQX6kkaI7fcHDtRloZt3eC96rv7ZlB1A==
+      - b57vYJfta3E4c5j_sRHBWJoY15eRA6HUI5HePv7idk4Kr-PzpySMvg==
       Age:
-      - '1173'
+      - '8183'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/aJCtkxLLzkk1pECehVjKHA2lBgw.jpg","belongs_to_collection":{"id":10,"name":"Star
@@ -70,6 +70,6 @@ http_interactions:
         and despair.","popularity":31.511,"poster_path":"/2l05cFWJacyIsTpsqSgH0wQXe4V.jpg","production_companies":[{"id":1,"logo_path":"/o86DbpburjxrqAzEDhXZcyE8pDb.png","name":"Lucasfilm
         Ltd.","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1980-05-20","revenue":538400000,"runtime":124,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
-        Adventure Continues...","title":"The Empire Strikes Back","video":false,"vote_average":8.393,"vote_count":15354}'
-  recorded_at: Tue, 23 May 2023 16:50:02 GMT
+        Adventure Continues...","title":"The Empire Strikes Back","video":false,"vote_average":8.392,"vote_count":15356}'
+  recorded_at: Wed, 24 May 2023 04:51:48 GMT
 recorded_with: VCR 6.1.0
