@@ -1,5 +1,6 @@
 class SearchFacade
-  def initialize(params)
+  def initialize(current_user, params)
+    @current_user = current_user
     @params = params
   end
 
@@ -10,7 +11,7 @@ class SearchFacade
   end
 
   def user_id
-    @params[:user_id]
+    @current_user[:id]
   end
 
   private

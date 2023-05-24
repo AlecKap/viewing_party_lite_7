@@ -14,7 +14,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
       end
 
       it 'I see a link to go back to discover page' do
-        expect(current_path).to eq(user_movies_path(@user1))
+        expect(current_path).to eq(movies_path)
         expect(page).to have_link('Discover Page')
 
         click_link 'Discover Page'
@@ -36,7 +36,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
         fill_in 'search', with: 'lion'
         click_button 'Find Movies'
 
-        expect(current_path).to eq(user_movies_path(@user1))
+        expect(current_path).to eq(movies_path)
         within(first('.movie')) do
           expect(page).to have_content(/lion/i)
           expect(page).to have_css('.title')

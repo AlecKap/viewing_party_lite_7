@@ -3,8 +3,9 @@ require 'rails_helper'
 RSpec.describe TopRatedFacade, :vcr do
   before(:each) do
     @user = User.create!(name: 'Emma Watson', email: 'hermione.foreva@gmail.com', password: 'password123', password_confirmation: 'password123')
-    @params = { user_id: @user.id, search: 'top%20rated' }
-    @facade = TopRatedFacade.new(@params)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+    @params = { search: 'top%20rated' }
+    @facade = TopRatedFacade.new(@user, @params)
   end
 
   it 'returns an array of movies' do

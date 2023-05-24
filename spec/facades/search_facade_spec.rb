@@ -3,8 +3,9 @@ require 'rails_helper'
 RSpec.describe SearchFacade, :vcr do
   before(:each) do
     @user = User.create!(name: 'Emma Watson', email: 'hermione.foreva@gmail.com', password: 'password123', password_confirmation: 'password123')
-    @params = { user_id: @user.id, search: 'harry potter' }
-    @facade = SearchFacade.new(@params)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+    @params = { search: 'harry potter' }
+    @facade = SearchFacade.new(@user, @params)
   end
 
   it 'returns an array of movies' do
