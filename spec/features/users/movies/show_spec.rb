@@ -4,7 +4,8 @@ RSpec.describe 'Movie Details Page', type: :feature do
   describe 'As a user, when I visit a movies detail page', :vcr do
     before(:each) do
       @user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com', password: 'FRIDAY4eva', password_confirmation: 'FRIDAY4eva')
-      visit user_discover_index_path(@user1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
+      visit discover_index_path
       fill_in 'search', with: 'Harry Potter and the Goblet of Fire'
       click_button 'Find Movies'
       click_link 'Harry Potter and the Goblet of Fire'
@@ -16,7 +17,7 @@ RSpec.describe 'Movie Details Page', type: :feature do
 
         click_button 'Discover Page'
 
-        expect(current_path).to eq(user_discover_index_path(@user1))
+        expect(current_path).to eq(discover_index_path)
       end
 
       it 'has a Create Viewing Party button' do

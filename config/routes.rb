@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login'
   get '/logout', to: 'users#logout'
-  resources :users, only: [:show, :create] do
-    resources :discover, only: [:index], controller: 'users/discover'
-    resources :movies, only: [:index, :show], controller: 'users/movies' do
-      resources :viewing_party, only: [:new, :create], controller: 'users/movies/viewing_parties'
+  get '/dashboard', to: 'users#show'
+  resources :discover, only: %i[index], controller: 'users/discover'
+
+  resources :users, only: %i[create] do
+    resources :movies, only: %i[index show], controller: 'users/movies' do
+      resources :viewing_party, only: %i[new create], controller: 'users/movies/viewing_parties'
     end
   end
 end

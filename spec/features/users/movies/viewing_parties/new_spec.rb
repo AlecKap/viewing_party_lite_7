@@ -6,7 +6,8 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
       @user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com', password: 'FRIDAY4eva', password_confirmation: 'FRIDAY4eva')
       @user2 = User.create!(name: 'Emma Watson', email: 'hermione.foreva@gmail.com', password: 'password123', password_confirmation: 'password123')
       @user3 = User.create!(name: 'Sigmund Freud', email: 'itsallaboutmom@gmail.com', password: 'phalliceverything1', password_confirmation: 'phalliceverything1')
-      visit user_discover_index_path(@user1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
+      visit discover_index_path
       fill_in 'search', with: 'Scott Pilgrim vs. the World'
       click_button 'Find Movies'
       click_link 'Scott Pilgrim vs. the World'
@@ -51,10 +52,10 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
       within("#invite_user_#{@user3.id}") do
         check 'invited_users[]'
       end
-      
+
       click_button 'Create Party'
 
-      expect(current_path).to eq(user_path(@user1))
+      expect(current_path).to eq(dashboard_path)
       # expect(page).to have_content('Scott Pilgrim vs. the World')
     end
 

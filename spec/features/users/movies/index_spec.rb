@@ -4,7 +4,8 @@ RSpec.describe 'Movies Results Page', type: :feature do
   describe 'As a user when I visit the discover movies page' do
     before(:each) do
       @user1 = User.create!(name: 'Rebecca Black', email: 'rebecca.black@gmail.com', password: 'FRIDAY4eva', password_confirmation: 'FRIDAY4eva')
-      visit user_discover_index_path(@user1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
+      visit discover_index_path
     end
 
     describe 'and click on the Top Movies button', :vcr do
@@ -17,7 +18,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
         expect(page).to have_link('Discover Page')
 
         click_link 'Discover Page'
-        expect(current_path).to eq(user_discover_index_path(@user1))
+        expect(current_path).to eq(discover_index_path)
       end
 
       it 'contains a list of 20 top movies' do
@@ -44,7 +45,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
       end
 
       it 'each movie has a link to its detail page', :vcr do
-        visit user_discover_index_path(@user1)
+        visit discover_index_path
         fill_in 'search', with: 'Harry Potter and the Goblet of Fire'
         click_button 'Find Movies'
         click_link 'Harry Potter and the Goblet of Fire'

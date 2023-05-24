@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
+  # before_action :require_user, only: [:show]
+
   def index
     @users = User.all
   end
 
   def show
-    @facade = MovieImagesFacade.new(params)
+    @facade = MovieImagesFacade.new(current_user)
   end
 
   def new
@@ -16,9 +18,9 @@ class UsersController < ApplicationController
       new_user = User.create!(user_params)
       session[:user_id] = new_user.id
       flash[:success] = "Welcome, #{new_user.name}!"
-      redirect_to user_path(new_user)
-    rescue ActiveRecord::RecordInvalid => error
-      flash[:notice] = "#{error.message}"
+      redirect_to dashboard_path
+    rescue ActiveRecord::RecordInvalid => e
+      flash[:notice] = e.message
       redirect_to register_path
     end
   end
@@ -47,5 +49,12 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def require_user
+    unless current_user
+      flash[:error] = 'You must be logged in or register to view this page'
+      redirect_to root_path
+    end
   end
 end

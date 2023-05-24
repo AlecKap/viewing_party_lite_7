@@ -1,10 +1,10 @@
 class MovieImagesFacade
-  def initialize(params)
-    @params = params
+  def initialize(current_user)
+    @current_user = current_user
   end
 
   def user
-   User.find(@params[:id])
+   User.find(@current_user[:id])
   end
 
   def movie_img(movie_id)
