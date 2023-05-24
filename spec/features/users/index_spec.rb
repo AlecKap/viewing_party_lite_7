@@ -53,8 +53,8 @@ RSpec.describe 'landing page', type: :feature do
       expect(current_path).to eq(root_path)
     end
 
-    xit 'if I try to visit dashboard without first being logged in I remain on landing page with a message' do
-      visit user_path(@user1)
+    it 'if I try to visit dashboard without first being logged in I remain on landing page with a message' do
+      visit dashboard_path
 
       expect(current_path).to eq(root_path)
       expect(page).to have_content('You must be logged in or register to view this page')

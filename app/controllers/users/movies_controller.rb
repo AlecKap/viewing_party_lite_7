@@ -1,5 +1,5 @@
 class Users::MoviesController < ApplicationController
-  # before_action :require_user, only: [:index, :show]
+  before_action :require_user, only: [:index, :show]
 
   def index
     @facade = if params[:search] == 'top%20rated'
