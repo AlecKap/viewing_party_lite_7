@@ -51,11 +51,15 @@ class UsersController < ApplicationController
     end
   end
 
-  def user_login_validation(user)
+  def user_login_validation(user) # Refactor Metz
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome back to Viewing Party lite, #{user.name}!"
-      redirect_to dashboard_path
+      if user.admin?
+        redirect_to admin_users_path
+      else
+        redirect_to dashboard_path
+      end
     else
       flash[:notice] = 'Sorry, these are not valid credentials. Please try again.'
       redirect_to login_path

@@ -80,13 +80,13 @@ RSpec.describe 'landing page', type: :feature do
       expect(current_path).to eq(root_path)
     end
 
-    # it 'I see a link to go Back to the Dashboard' do
-    #   expect(page).to have_link('Back to the Dashboard')
+    it 'I see a link to go Back to the Dashboard' do
+      expect(page).to have_link('Back to the Dashboard')
 
-    #   click_link 'Back to the Dashboard'
+      click_link 'Back to the Dashboard'
 
-    #   expect(current_path).to eq(user_path(@user1))
-    # end
+      expect(current_path).to eq(dashboard_path)
+    end
 
     it 'I do not see a button to create a new user' do
       expect(page).to_not have_link('Create New User')

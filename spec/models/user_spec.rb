@@ -12,6 +12,7 @@ RSpec.describe User, type: :model do
     it { should validate_uniqueness_of(:email).case_insensitive }
     it { should validate_confirmation_of(:password) }
     it { should have_secure_password }
+    it { should define_enum_for(:role).with_values(%i[default admin]) }
   end
 
   describe 'authentication' do
